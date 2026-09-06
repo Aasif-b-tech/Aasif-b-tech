@@ -1,55 +1,33 @@
-👋 Hey, I'm Aasif
+<div align="center">
 
-💻 Computer Science Engineer • UI/UX Designer • Developer • Builder
+<img src="https://capsule-render.vercel.app/api?type=waving&height=220&text=AASIF&fontSize=70&fontAlignY=40&animation=fadeIn&fontColor=ffffff&color=0:0f172a,50:1e3a8a,100:38bdf8" width="100%"/>
 
-«Turning ideas into interfaces, code, and experiences. 🚀»
+# 👋 Hey, I'm Aasif
 
-I'm a B.Tech Computer Science & Engineering student passionate about building things that combine technology, creativity, and real-world impact.
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&duration=2800&pause=900&color=58A6FF&center=true&vCenter=true&width=750&lines=Computer+Science+Engineering+Student;UI%2FUX+Designer+%7C+Developer;Web+Developer+%7C+Problem+Solver;AI+%7C+Game+Development+Enthusiast;Building+Ideas+Into+Reality+%F0%9F%9A%80" />
 
-I enjoy exploring everything from web applications and AI-powered solutions to game development and futuristic UI/UX.
+<br>
 
----
+<img src="https://komarev.com/ghpvc/?username=Aasif-b-tech&style=for-the-badge&color=58A6FF&label=PROFILE+VIEWS"/>
 
-🧠 What I'm Working With
-
-💻 Development
-
-"HTML" "CSS" "JavaScript" "Python" "C++"
-
-🎨 Design & UI/UX
-
-"UI/UX Design" "Figma" "Responsive Design" "Prototyping"
-
-⚡ Technologies & Tools
-
-"Git" "GitHub" "VS Code" "Firebase" "Vercel"
-
-🤖 Exploring
-
-"Artificial Intelligence" "Machine Learning" "Backend Development" "Game Development" "Unity"
+</div>
 
 ---
 
-🚀 Currently Building
+## 🧑‍💻 About Me
 
-🔹 HyperNova — Hackathon projects focused on solving real-world problems with technology.
+I'm a **B.Tech Computer Science & Engineering student** who loves turning ideas into real digital experiences.
 
-🔹 Web Experiences — Interactive and responsive websites with modern UI/UX.
+I work across **development, UI/UX, AI, hackathons and game development**, while constantly experimenting with new technologies.
 
-🔹 AI Projects — Exploring practical applications of AI and intelligent systems.
-
-🔹 Game Development — Experimenting with interactive worlds, mechanics, and storytelling.
-
-🔹 Creative Projects — Turning anime-inspired ideas and stories into digital experiences.
-
----
-
-🛠️ My Developer Journey
-
-Ideas
-  ↓
-UI / UX
-  ↓
+```text
+🎓 Computer Science Engineering
+💻 Web Development
+🎨 UI/UX Design
+🤖 Artificial Intelligence
+🎮 Game Development
+🏆 Hackathons
+🚀 Creative Technology  ↓
 Frontend
   ↓
 Backend
