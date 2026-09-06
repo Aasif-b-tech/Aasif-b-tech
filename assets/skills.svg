@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#06101d"/><stop offset=".55" stop-color="#0b1830"/><stop offset="1" stop-color="#160d2b"/>
+  </linearGradient>
+  <linearGradient id="cyan" x1="0" x2="1"><stop stop-color="#19e6ff"/><stop offset="1" stop-color="#70f8ff"/></linearGradient>
+  <linearGradient id="purple" x1="0" x2="1"><stop stop-color="#875cff"/><stop offset="1" stop-color="#d58cff"/></linearGradient>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#16385b" opacity=".35"/></pattern>
+  <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+
+<rect width="1200" height="700" rx="28" fill="url(#bg)"/>
+<rect x="18" y="18" width="1164" height="664" rx="22" fill="url(#grid)" stroke="#1e456b" stroke-width="2"/>
+
+<g fill="none" stroke="#19e6ff" stroke-width="3">
+ <path d="M55 105V55H105"/><path d="M1095 55H1145V105"/>
+ <path d="M55 595V645H105"/><path d="M1095 645H1145V595"/>
+</g>
+
+<text x="70" y="88" fill="#19e6ff" font-family="monospace" font-size="20" letter-spacing="4">AASIF // SKILL MATRIX</text>
+<text x="70" y="128" fill="#fff" font-family="Arial,sans-serif" font-size="34" font-weight="700">TECH STACK &amp; CAPABILITIES</text>
+<text x="70" y="158" fill="#8da8c5" font-family="monospace" font-size="15">SYSTEMS I USE TO TURN IDEAS INTO WORKING BUILDS</text>
+
+<!-- cards -->
+<g font-family="Arial,sans-serif">
+  <rect x="70" y="195" width="500" height="125" rx="18" fill="#091b31" stroke="#245a82" stroke-width="2"/>
+  <text x="98" y="228" fill="#19e6ff" font-family="monospace" font-size="14" letter-spacing="3">01 // DEVELOPMENT</text>
+  <text x="98" y="264" fill="#fff" font-size="25" font-weight="700">HTML • CSS • JAVASCRIPT</text>
+  <text x="98" y="292" fill="#8da8c5" font-family="monospace" font-size="14">Responsive interfaces • Web experiences</text>
+  <rect x="98" y="303" width="400" height="5" rx="3" fill="#17334e"/>
+  <rect x="98" y="303" width="330" height="5" rx="3" fill="url(#cyan)" filter="url(#glow)"/>
+
+  <rect x="630" y="195" width="500" height="125" rx="18" fill="#120e29" stroke="#6545a3" stroke-width="2"/>
+  <text x="658" y="228" fill="#bd8cff" font-family="monospace" font-size="14" letter-spacing="3">02 // PROGRAMMING</text>
+  <text x="658" y="264" fill="#fff" font-size="25" font-weight="700">PYTHON • C++</text>
+  <text x="658" y="292" fill="#b8a8d4" font-family="monospace" font-size="14">Logic • Algorithms • Problem solving</text>
+  <rect x="658" y="303" width="400" height="5" rx="3" fill="#2b2144"/>
+  <rect x="658" y="303" width="300" height="5" rx="3" fill="url(#purple)" filter="url(#glow)"/>
+
+  <rect x="70" y="345" width="500" height="125" rx="18" fill="#120e29" stroke="#6545a3" stroke-width="2"/>
+  <text x="98" y="378" fill="#bd8cff" font-family="monospace" font-size="14" letter-spacing="3">03 // CREATIVE</text>
+  <text x="98" y="414" fill="#fff" font-size="25" font-weight="700">UI/UX • VISUAL DESIGN</text>
+  <text x="98" y="442" fill="#b8a8d4" font-family="monospace" font-size="14">Wireframes • Prototypes • Design systems</text>
+  <rect x="98" y="453" width="400" height="5" rx="3" fill="#2b2144"/>
+  <rect x="98" y="453" width="350" height="5" rx="3" fill="url(#purple)" filter="url(#glow)"/>
+
+  <rect x="630" y="345" width="500" height="125" rx="18" fill="#091b31" stroke="#245a82" stroke-width="2"/>
+  <text x="658" y="378" fill="#19e6ff" font-family="monospace" font-size="14" letter-spacing="3">04 // EMERGING</text>
+  <text x="658" y="414" fill="#fff" font-size="25" font-weight="700">AI • GAME DEVELOPMENT</text>
+  <text x="658" y="442" fill="#8da8c5" font-family="monospace" font-size="14">Experiments • Prototypes • Interactive systems</text>
+  <rect x="658" y="453" width="400" height="5" rx="3" fill="#17334e"/>
+  <rect x="658" y="453" width="275" height="5" rx="3" fill="url(#cyan)" filter="url(#glow)"/>
+</g>
+
+<!-- tool belt -->
+<rect x="70" y="500" width="1060" height="120" rx="18" fill="#071321" stroke="#1e456b" stroke-width="2"/>
+<text x="98" y="534" fill="#19e6ff" font-family="monospace" font-size="14" letter-spacing="3">05 // TOOL BELT</text>
+
+<g font-family="monospace" font-size="15" text-anchor="middle">
+ <g fill="#0b2136" stroke="#1e6483">
+  <rect x="95" y="555" width="145" height="38" rx="10"/><rect x="255" y="555" width="145" height="38" rx="10"/>
+  <rect x="415" y="555" width="145" height="38" rx="10"/><rect x="575" y="555" width="145" height="38" rx="10"/>
+  <rect x="735" y="555" width="145" height="38" rx="10"/><rect x="895" y="555" width="145" height="38" rx="10"/>
+ </g>
+ <text x="167" y="580" fill="#bdf9ff">GIT / GITHUB</text>
+ <text x="327" y="580" fill="#bdf9ff">VS CODE</text>
+ <text x="487" y="580" fill="#bdf9ff">FIGMA</text>
+ <text x="647" y="580" fill="#bdf9ff">BLENDER</text>
+ <text x="807" y="580" fill="#bdf9ff">UNITY</text>
+ <text x="967" y="580" fill="#bdf9ff">FIREBASE</text>
+</g>
+
+<line x1="70" y1="650" x2="1130" y2="650" stroke="url(#cyan)" stroke-width="2" opacity=".8"/>
+<text x="70" y="670" fill="#6885a5" font-family="monospace" font-size="12">STATUS: LEARNING • BUILDING • LEVELING UP</text>
+<text x="1130" y="670" text-anchor="end" fill="#19e6ff" font-family="monospace" font-size="12">SKILL_SYNC: ONLINE</text>
+</svg>
