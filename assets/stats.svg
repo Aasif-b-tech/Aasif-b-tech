@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050b16"/>
+      <stop offset="0.5" stop-color="#0a1730"/>
+      <stop offset="1" stop-color="#17102e"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22e6ff"/>
+      <stop offset="1" stop-color="#8b5cff"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="420" rx="28" fill="url(#bg)"/>
+  <rect x="18" y="18" width="1164" height="384" rx="22" fill="none" stroke="#263b61" stroke-width="2"/>
+
+  <circle cx="58" cy="62" r="4" fill="#22e6ff" filter="url(#glow)"/>
+  <text x="78" y="69" fill="#8ba7c9" font-family="monospace" font-size="18" letter-spacing="4">AASIF // GITHUB METRICS</text>
+  <text x="1138" y="69" text-anchor="end" fill="#587492" font-family="monospace" font-size="12">LIVE PROFILE DATA</text>
+
+  <g font-family="monospace">
+    <rect x="55" y="105" width="250" height="120" rx="16" fill="#0b1a31" stroke="#25476d"/>
+    <text x="78" y="135" fill="#6f8dab" font-size="13" letter-spacing="2">REPOSITORIES</text>
+    <text x="78" y="185" fill="#e8fbff" font-family="sans-serif" font-size="42" font-weight="700">BUILD</text>
+    <text x="78" y="207" fill="#22e6ff" font-size="12">PROJECTS IN MOTION</text>
+
+    <rect x="325" y="105" width="250" height="120" rx="16" fill="#0b1a31" stroke="#25476d"/>
+    <text x="348" y="135" fill="#6f8dab" font-size="13" letter-spacing="2">CONTRIBUTIONS</text>
+    <text x="348" y="185" fill="#e8fbff" font-family="sans-serif" font-size="42" font-weight="700">CREATE</text>
+    <text x="348" y="207" fill="#8b5cff" font-size="12">CONSISTENCY MODE</text>
+
+    <rect x="595" y="105" width="250" height="120" rx="16" fill="#0b1a31" stroke="#25476d"/>
+    <text x="618" y="135" fill="#6f8dab" font-size="13" letter-spacing="2">TECH STACK</text>
+    <text x="618" y="185" fill="#e8fbff" font-family="sans-serif" font-size="42" font-weight="700">LEARN</text>
+    <text x="618" y="207" fill="#22e6ff" font-size="12">WEB • AI • UI/UX • GAME DEV</text>
+
+    <rect x="865" y="105" width="280" height="120" rx="16" fill="#0b1a31" stroke="#25476d"/>
+    <text x="888" y="135" fill="#6f8dab" font-size="13" letter-spacing="2">PROFILE STATUS</text>
+    <circle cx="897" cy="173" r="6" fill="#22e6ff" filter="url(#glow)"/>
+    <text x="916" y="179" fill="#e8fbff" font-size="18">ONLINE</text>
+    <text x="888" y="207" fill="#587492" font-size="12">BUILDING THE NEXT IDEA...</text>
+  </g>
+
+  <text x="55" y="270" fill="#6f8dab" font-family="monospace" font-size="13" letter-spacing="2">DEVELOPER ACTIVITY // SIGNAL</text>
+  <path d="M55 330
+           C105 305 125 350 170 325
+           S235 290 280 326
+           S350 350 395 315
+           S470 295 515 330
+           S590 350 635 310
+           S705 292 750 326
+           S825 348 870 314
+           S940 292 985 325
+           S1060 348 1145 304"
+        fill="none" stroke="url(#line)" stroke-width="4" filter="url(#glow)"/>
+  <path d="M55 330H1145" stroke="#1e3657"/>
+  <circle cx="1145" cy="304" r="6" fill="#22e6ff" filter="url(#glow)"/>
+
+  <text x="55" y="375" fill="#587492" font-family="monospace" font-size="12">STATUS: BUILD • LEARN • CREATE • REPEAT</text>
+  <text x="1145" y="375" text-anchor="end" fill="#587492" font-family="monospace" font-size="12">AASIF.DEV // METRICS_CORE_01</text>
+</svg>
