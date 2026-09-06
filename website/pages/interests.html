@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AASIF // Interests and creative universe">
+    <title>AASIF // Interest Core</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js" defer></script>
+
+    <style>
+        .interests-page {
+            padding-top: 8rem;
+        }
+
+        .interests-hero {
+            min-height: 62vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .interest-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.5rem 0.8rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid rgba(104, 221, 255, 0.22);
+            background: rgba(8, 18, 36, 0.55);
+            color: #8ee9ff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.67rem;
+            letter-spacing: 0.16em;
+        }
+
+        .interest-kicker::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #69ddff;
+            box-shadow: 0 0 15px #69ddff;
+        }
+
+        .interests-hero h1 {
+            margin: 0 0 1.2rem;
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(2.7rem, 6vw, 6rem);
+            line-height: 0.98;
+            letter-spacing: -0.05em;
+        }
+
+        .interests-hero h1 span {
+            color: #76ddff;
+            text-shadow: 0 0 30px rgba(79, 215, 255, 0.25);
+        }
+
+        .interests-hero p {
+            max-width: 680px;
+            color: #a8b8d0;
+            line-height: 1.85;
+            font-size: 1.04rem;
+        }
+
+        .creative-core {
+            position: relative;
+            min-height: 420px;
+            display: grid;
+            place-items: center;
+        }
+
+        .core-ring {
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            border: 1px solid rgba(102, 219, 255, 0.2);
+            border-radius: 50%;
+            animation: spin 22s linear infinite;
+        }
+
+        .core-ring::before,
+        .core-ring::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(130, 110, 255, 0.28);
+        }
+
+        .core-ring::before {
+            inset: 34px;
+        }
+
+        .core-ring::after {
+            inset: 72px;
+            border-color: rgba(93, 222, 255, 0.34);
+        }
+
+        .core-node {
+            position: relative;
+            z-index: 2;
+            width: 155px;
+            height: 155px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            border: 1px solid rgba(116, 227, 255, 0.48);
+            background: radial-gradient(circle, rgba(77, 217, 255, 0.2), rgba(13, 25, 50, 0.88) 65%);
+            box-shadow: 0 0 42px rgba(64, 210, 255, 0.23), inset 0 0 30px rgba(91, 214, 255, 0.08);
+            text-align: center;
+            font-family: "Orbitron", sans-serif;
+        }
+
+        .core-node strong {
+            display: block;
+            color: #effcff;
+            font-size: 1.25rem;
+            letter-spacing: 0.12em;
+        }
+
+        .core-node small {
+            color: #70ddff;
+            font-size: 0.56rem;
+            letter-spacing: 0.17em;
+        }
+
+        .node-label {
+            position: absolute;
+            z-index: 3;
+            padding: 0.55rem 0.7rem;
+            border: 1px solid rgba(109, 220, 255, 0.18);
+            background: rgba(5, 13, 28, 0.78);
+            color: #9aacc6;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.57rem;
+            letter-spacing: 0.1em;
+        }
+
+        .node-label.a { top: 9%; right: 3%; }
+        .node-label.b { left: 0; top: 42%; }
+        .node-label.c { bottom: 7%; right: 8%; }
+        .node-label.d { bottom: 17%; left: 5%; }
+
+        .section-heading {
+            margin-bottom: 2rem;
+        }
+
+        .section-heading .eyebrow {
+            color: #67ddff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 0.18em;
+        }
+
+        .section-heading h2 {
+            margin: 0.55rem 0 0;
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(1.7rem, 4vw, 3rem);
+        }
+
+        .interest-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
+        }
+
+        .interest-card {
+            position: relative;
+            overflow: hidden;
+            min-height: 245px;
+            padding: 1.7rem;
+            border: 1px solid rgba(108, 207, 255, 0.16);
+            background: linear-gradient(145deg, rgba(18, 31, 59, 0.8), rgba(8, 15, 31, 0.74));
+            backdrop-filter: blur(14px);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .interest-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(105, 222, 255, 0.4);
+        }
+
+        .interest-card .number {
+            color: #6cdfff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 0.16em;
+        }
+
+        .interest-card h3 {
+            margin: 0.75rem 0;
+            font-family: "Orbitron", sans-serif;
+            font-size: 1.2rem;
+        }
+
+        .interest-card p {
+            margin: 0;
+            color: #9daec6;
+            line-height: 1.75;
+        }
+
+        .interest-card .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin-top: 1.2rem;
+        }
+
+        .interest-card .tags span {
+            padding: 0.35rem 0.55rem;
+            border: 1px solid rgba(108, 219, 255, 0.14);
+            color: #bed0e7;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.5rem;
+            letter-spacing: 0.09em;
+        }
+
+        .universe-panel {
+            margin-top: 1.2rem;
+            padding: 2rem;
+            border: 1px solid rgba(119, 107, 255, 0.2);
+            background: linear-gradient(120deg, rgba(49, 53, 117, 0.16), rgba(10, 19, 38, 0.75));
+        }
+
+        .universe-panel h3 {
+            margin-top: 0;
+            font-family: "Orbitron", sans-serif;
+        }
+
+        .world-flow {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.8rem;
+            margin-top: 1.4rem;
+        }
+
+        .world-step {
+            padding: 1rem;
+            border: 1px solid rgba(112, 218, 255, 0.13);
+            background: rgba(255, 255, 255, 0.025);
+        }
+
+        .world-step strong {
+            display: block;
+            color: #6fe0ff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.62rem;
+            letter-spacing: 0.1em;
+        }
+
+        .world-step span {
+            display: block;
+            margin-top: 0.45rem;
+            color: #c5d3e6;
+            font-size: 0.88rem;
+        }
+
+        .interest-footer-card {
+            margin-top: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1.5rem;
+            border: 1px solid rgba(105, 219, 255, 0.16);
+            background: rgba(9, 18, 35, 0.72);
+        }
+
+        .interest-footer-card h3 {
+            margin: 0 0 0.35rem;
+            font-family: "Orbitron", sans-serif;
+        }
+
+        .interest-footer-card p {
+            margin: 0;
+            color: #9aabc2;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 900px) {
+            .interests-hero {
+                grid-template-columns: 1fr;
+            }
+
+            .creative-core {
+                min-height: 330px;
+            }
+
+            .world-flow {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .interests-page {
+                padding-top: 6.5rem;
+            }
+
+            .interest-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .creative-core {
+                min-height: 285px;
+                transform: scale(0.83);
+            }
+
+            .world-flow {
+                grid-template-columns: 1fr;
+            }
+
+            .interest-footer-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .core-ring {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-noise"></div>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <header class="topbar">
+        <a class="brand" href="../index.html">
+            <span class="brand-mark">A</span>
+            <span>AASIF<span class="brand-slash"> //</span></span>
+        </a>
+
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav-links">
+            <a href="../index.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a href="skills.html">SKILLS</a>
+            <a href="projects.html">PROJECTS</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+    </header>
+
+    <main class="container interests-page">
+        <section class="interests-hero reveal">
+            <div>
+                <div class="interest-kicker">INTEREST CORE // ONLINE</div>
+                <h1>BUILD<br><span>WHAT</span><br>IMAGINATION SEES.</h1>
+                <p>
+                    Technology is only one half of the system. The other half is curiosity:
+                    anime, games, stories, visual worlds, design experiments, and the urge
+                    to turn impossible-looking ideas into something you can actually see.
+                </p>
+            </div>
+
+            <div class="creative-core" aria-label="Creative interest core visualization">
+                <div class="core-ring"></div>
+                <div class="node-label a">ANIME // ON</div>
+                <div class="node-label b">DESIGN // ON</div>
+                <div class="node-label c">GAME DEV // ON</div>
+                <div class="node-label d">STORY // ON</div>
+
+                <div class="core-node">
+                    <div>
+                        <strong>CREATE</strong>
+                        <small>CORE ONLINE</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block reveal">
+            <div class="section-heading">
+                <div class="eyebrow">01 // CREATIVE SYSTEMS</div>
+                <h2>Interests That Power the Build</h2>
+            </div>
+
+            <div class="interest-grid">
+                <article class="interest-card">
+                    <div class="number">MODULE 01</div>
+                    <h3>Anime & Storytelling</h3>
+                    <p>
+                        Creating characters, clans, powers, conflicts, emotional arcs,
+                        and entire fictional universes. Stories are treated like systems:
+                        every world needs rules, identity, and a reason to exist.
+                    </p>
+                    <div class="tags">
+                        <span>CHARACTERS</span>
+                        <span>LORE</span>
+                        <span>WORLD BUILDING</span>
+                    </div>
+                </article>
+
+                <article class="interest-card">
+                    <div class="number">MODULE 02</div>
+                    <h3>Game Development</h3>
+                    <p>
+                        Exploring the space where code becomes interaction: gameplay,
+                        mechanics, environments, interfaces, progression systems,
+                        and worlds that players can actually experience.
+                    </p>
+                    <div class="tags">
+                        <span>UNITY</span>
+                        <span>GAMEPLAY</span>
+                        <span>WORLDS</span>
+                    </div>
+                </article>
+
+                <article class="interest-card">
+                    <div class="number">MODULE 03</div>
+                    <h3>Design & Visual Systems</h3>
+                    <p>
+                        Turning information into interfaces that feel clear, cinematic,
+                        and alive. UI/UX is the bridge between a powerful system and
+                        the person using it.
+                    </p>
+                    <div class="tags">
+                        <span>UI/UX</span>
+                        <span>FIGMA</span>
+                        <span>VISUALS</span>
+                    </div>
+                </article>
+
+                <article class="interest-card">
+                    <div class="number">MODULE 04</div>
+                    <h3>Building & Experimenting</h3>
+                    <p>
+                        Trying new technologies, prototyping ideas, breaking things,
+                        rebuilding them, and discovering what happens when different
+                        disciplines collide.
+                    </p>
+                    <div class="tags">
+                        <span>AI</span>
+                        <span>WEB</span>
+                        <span>EXPERIMENTS</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-block reveal">
+            <div class="section-heading">
+                <div class="eyebrow">02 // CREATIVE PIPELINE</div>
+                <h2>From Idea to Universe</h2>
+            </div>
+
+            <div class="universe-panel">
+                <h3>THE WORLD-BUILDING ENGINE</h3>
+                <p>
+                    A random idea can become a character, a character can become a conflict,
+                    and a conflict can become an entire world. That's the fun part.
+                </p>
+
+                <div class="world-flow">
+                    <div class="world-step">
+                        <strong>01 // IDEA</strong>
+                        <span>Find the spark.</span>
+                    </div>
+                    <div class="world-step">
+                        <strong>02 // CHARACTER</strong>
+                        <span>Give it identity.</span>
+                    </div>
+                    <div class="world-step">
+                        <strong>03 // CONFLICT</strong>
+                        <span>Give the world a reason to move.</span>
+                    </div>
+                    <div class="world-step">
+                        <strong>04 // WORLD</strong>
+                        <span>Make it feel alive.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="interest-footer-card reveal">
+            <div>
+                <h3>NEXT MODULE // CURRENT SIGNAL</h3>
+                <p>See what is currently running in the creative system.</p>
+            </div>
+            <a class="btn btn-primary" href="now-playing.html">OPEN NOW PLAYING →</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>AASIF //</strong>
+            <span>INTEREST CORE</span>
+        </div>
+        <p>IDEA → CHARACTER → CONFLICT → WORLD → REALITY</p>
+        <small>© <span data-year></span> AASIF. ALL SYSTEMS ONLINE.</small>
+    </footer>
+</body>
+</html>
