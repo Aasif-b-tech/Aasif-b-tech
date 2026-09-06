@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#030611"/>
+      <stop offset=".5" stop-color="#0a1230"/>
+      <stop offset="1" stop-color="#040611"/>
+    </linearGradient>
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00d9ff"/>
+      <stop offset=".5" stop-color="#7c5cff"/>
+      <stop offset="1" stop-color="#00d9ff"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="360" rx="28" fill="url(#bg)"/>
+  <rect x="2" y="2" width="1196" height="356" rx="26" fill="none" stroke="url(#neon)" stroke-width="2"/>
+
+  <path d="M35 85V35h55 M1110 35h55v50 M35 275v50h55 M1110 325h55v-50"
+        fill="none" stroke="#00d9ff" stroke-width="3" filter="url(#glow)"/>
+
+  <text x="600" y="58" fill="#fff" font-family="Arial,sans-serif"
+        font-size="24" font-weight="700" text-anchor="middle" letter-spacing="7">AASIF // SYSTEM ACTIVITY</text>
+  <text x="600" y="84" fill="#7895c9" font-family="Arial,sans-serif"
+        font-size="12" text-anchor="middle" letter-spacing="4">CURRENTLY BUILDING • LEARNING • EXPLORING</text>
+
+  <!-- activity cards -->
+  <g font-family="Arial,sans-serif">
+    <rect x="70" y="115" width="330" height="105" rx="16" fill="#07102a" stroke="#167cff"/>
+    <circle cx="105" cy="148" r="8" fill="#00d9ff" filter="url(#glow)"/>
+    <text x="125" y="154" fill="#fff" font-size="17" font-weight="700">WEB DEVELOPMENT</text>
+    <text x="95" y="184" fill="#8ea8d9" font-size="12">INTERFACES • APIS • DEPLOYMENT</text>
+    <rect x="95" y="199" width="270" height="5" rx="2" fill="#14254c"/>
+    <rect x="95" y="199" width="205" height="5" rx="2" fill="#00d9ff"/>
+
+    <rect x="435" y="115" width="330" height="105" rx="16" fill="#07102a" stroke="#7c5cff"/>
+    <circle cx="470" cy="148" r="8" fill="#7c5cff" filter="url(#glow)"/>
+    <text x="490" y="154" fill="#fff" font-size="17" font-weight="700">AI / EXPERIMENTS</text>
+    <text x="460" y="184" fill="#8ea8d9" font-size="12">PYTHON • MODELS • IDEAS</text>
+    <rect x="460" y="199" width="270" height="5" rx="2" fill="#14254c"/>
+    <rect x="460" y="199" width="165" height="5" rx="2" fill="#7c5cff"/>
+
+    <rect x="800" y="115" width="330" height="105" rx="16" fill="#07102a" stroke="#00d9ff"/>
+    <circle cx="835" cy="148" r="8" fill="#00d9ff" filter="url(#glow)"/>
+    <text x="855" y="154" fill="#fff" font-size="17" font-weight="700">UI / UX DESIGN</text>
+    <text x="825" y="184" fill="#8ea8d9" font-size="12">FIGMA • SYSTEMS • PROTOTYPES</text>
+    <rect x="825" y="199" width="270" height="5" rx="2" fill="#14254c"/>
+    <rect x="825" y="199" width="230" height="5" rx="2" fill="#00d9ff"/>
+  </g>
+
+  <!-- bottom telemetry -->
+  <line x1="90" y1="252" x2="1110" y2="252" stroke="#1b315d"/>
+  <text x="100" y="280" fill="#7895c9" font-family="monospace" font-size="11">PROCESS</text>
+  <text x="265" y="280" fill="#00d9ff" font-family="monospace" font-size="11">IDEA → PROTOTYPE → BUILD → SHIP</text>
+  <text x="760" y="280" fill="#7895c9" font-family="monospace" font-size="11">STATUS</text>
+  <text x="835" y="280" fill="#63e6be" font-family="monospace" font-size="11">● ONLINE</text>
+  <text x="100" y="315" fill="#526b9f" font-family="monospace" font-size="10">SYSTEM LOG // AASIF // 2026</text>
+  <text x="1100" y="315" fill="#526b9f" font-family="monospace" font-size="10" text-anchor="end">BUILD • LEARN • CREATE • REPEAT</text>
+</svg>
