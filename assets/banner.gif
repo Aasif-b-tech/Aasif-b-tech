@@ -1,1 +1,359 @@
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
+import math
+import random
+import os
 
+WIDTH = 1200
+HEIGHT = 420
+FRAMES = 36
+
+output = "banner.gif"
+
+random.seed(42)
+
+bold_font = ImageFont.truetype(
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+    76
+)
+
+medium_font = ImageFont.truetype(
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+    30
+)
+
+small_font = ImageFont.truetype(
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    22
+)
+
+stars = [
+    (
+        random.randrange(WIDTH),
+        random.randrange(HEIGHT),
+        random.choice([1, 1, 1, 2]),
+        random.random() * math.tau
+    )
+    for _ in range(90)
+]
+
+frames = []
+
+for frame in range(FRAMES):
+
+    t = frame / FRAMES * math.tau
+
+    # Background
+    image = Image.new(
+        "RGB",
+        (WIDTH, HEIGHT),
+        (4, 8, 20)
+    )
+
+    pixels = image.load()
+
+    # Animated futuristic gradient
+    for y in range(HEIGHT):
+
+        for x in range(WIDTH):
+
+            glow_left = max(
+                0,
+                1 - math.hypot(x - 220, y - 180) / 520
+            )
+
+            glow_right = max(
+                0,
+                1 - math.hypot(x - 980, y - 250) / 500
+            )
+
+            wave = (
+                0.5 +
+                0.5 * math.sin(x / 150 + t)
+            )
+
+            r = int(
+                4 +
+                7 * glow_left +
+                4 * glow_right
+            )
+
+            g = int(
+                8 +
+                18 * glow_left +
+                18 * glow_right +
+                4 * wave
+            )
+
+            b = int(
+                20 +
+                48 * glow_left +
+                65 * glow_right
+            )
+
+            pixels[x, y] = (r, g, b)
+
+    overlay = Image.new(
+        "RGBA",
+        (WIDTH, HEIGHT),
+        (0, 0, 0, 0)
+    )
+
+    draw = ImageDraw.Draw(overlay)
+
+    # Stars
+    for sx, sy, radius, phase in stars:
+
+        twinkle = (
+            0.45 +
+            0.55 *
+            (0.5 + 0.5 * math.sin(t * 2 + phase))
+        )
+
+        alpha = int(100 + 155 * twinkle)
+
+        draw.ellipse(
+            (
+                sx - radius,
+                sy - radius,
+                sx + radius,
+                sy + radius
+            ),
+            fill=(120, 210, 255, alpha)
+        )
+
+    # Moving energy lines
+    for i in range(-2, 8):
+
+        x = (
+            (i * 220 + frame * 12)
+            % (WIDTH + 300)
+        ) - 150
+
+        draw.line(
+            (x, HEIGHT, x + 280, 0),
+            fill=(56, 189, 248, 35),
+            width=3
+        )
+
+    # Holographic rings
+    center_x = WIDTH // 2
+    center_y = 210
+
+    for radius, alpha, width in [
+        (145, 70, 3),
+        (185, 42, 2),
+        (225, 25, 2)
+    ]:
+
+        box = (
+            center_x - radius,
+            center_y - radius,
+            center_x + radius,
+            center_y + radius
+        )
+
+        start = (
+            frame * 7 + radius
+        ) % 360
+
+        draw.arc(
+            box,
+            start,
+            start + 230,
+            fill=(56, 189, 248, alpha),
+            width=width
+        )
+
+        draw.arc(
+            box,
+            start + 180,
+            start + 300,
+            fill=(167, 139, 250, alpha),
+            width=width
+        )
+
+    # Orbiting nodes
+    for i in range(6):
+
+        angle = (
+            t * 1.3 +
+            i * math.tau / 6
+        )
+
+        radius = (
+            185 +
+            12 * math.sin(t * 2 + i)
+        )
+
+        x = center_x + math.cos(angle) * radius
+        y = center_y + math.sin(angle) * radius * 0.55
+
+        draw.ellipse(
+            (x - 6, y - 6, x + 6, y + 6),
+            fill=(56, 189, 248, 210)
+        )
+
+        draw.ellipse(
+            (x - 12, y - 12, x + 12, y + 12),
+            outline=(56, 189, 248, 55),
+            width=2
+        )
+
+    # Bottom energy line
+    pulse = int(
+        70 +
+        70 *
+        (0.5 + 0.5 * math.sin(t * 2))
+    )
+
+    draw.rounded_rectangle(
+        (120, 350, 1080, 354),
+        radius=2,
+        fill=(56, 189, 248, pulse)
+    )
+
+    image = Image.alpha_composite(
+        image.convert("RGBA"),
+        overlay
+    )
+
+    # Text layer
+    text_layer = Image.new(
+        "RGBA",
+        (WIDTH, HEIGHT),
+        (0, 0, 0, 0)
+    )
+
+    text_draw = ImageDraw.Draw(text_layer)
+
+    title = "AASIF"
+
+    box = text_draw.textbbox(
+        (0, 0),
+        title,
+        font=bold_font
+    )
+
+    title_width = box[2] - box[0]
+
+    title_x = (
+        WIDTH - title_width
+    ) // 2
+
+    title_y = 92
+
+    # Glow
+    glow = Image.new(
+        "RGBA",
+        (WIDTH, HEIGHT),
+        (0, 0, 0, 0)
+    )
+
+    glow_draw = ImageDraw.Draw(glow)
+
+    for blur_radius, alpha in [
+        (18, 35),
+        (10, 55),
+        (5, 90)
+    ]:
+
+        glow_draw.text(
+            (title_x, title_y),
+            title,
+            font=bold_font,
+            fill=(56, 189, 248, alpha)
+        )
+
+        glow = glow.filter(
+            ImageFilter.GaussianBlur(
+                blur_radius
+            )
+        )
+
+    text_layer = Image.alpha_composite(
+        text_layer,
+        glow
+    )
+
+    text_draw = ImageDraw.Draw(text_layer)
+
+    # Main title
+    text_draw.text(
+        (title_x, title_y),
+        title,
+        font=bold_font,
+        fill=(240, 249, 255, 255)
+    )
+
+    # Subtitle
+    subtitle = (
+        "COMPUTER SCIENCE • UI/UX • AI • WEB • GAME DEV"
+    )
+
+    box = text_draw.textbbox(
+        (0, 0),
+        subtitle,
+        font=medium_font
+    )
+
+    subtitle_width = box[2] - box[0]
+
+    text_draw.text(
+        (
+            (WIDTH - subtitle_width) // 2,
+            195
+        ),
+        subtitle,
+        font=medium_font,
+        fill=(148, 163, 184, 255)
+    )
+
+    # Animated status
+    dots = "." * ((frame // 9) % 4)
+
+    status = (
+        f"BUILDING THE NEXT IDEA{dots}"
+    )
+
+    box = text_draw.textbbox(
+        (0, 0),
+        status,
+        font=small_font
+    )
+
+    status_width = box[2] - box[0]
+
+    text_draw.text(
+        (
+            (WIDTH - status_width) // 2,
+            255
+        ),
+        status,
+        font=small_font,
+        fill=(56, 189, 248, 230)
+    )
+
+    image = Image.alpha_composite(
+        image,
+        text_layer
+    )
+
+    frames.append(
+        image.convert(
+            "P",
+            palette=Image.Palette.ADAPTIVE,
+            colors=256
+        )
+    )
+
+# Save animated GIF
+frames[0].save(
+    output,
+    save_all=True,
+    append_images=frames[1:],
+    duration=90,
+    loop=0,
+    optimize=False
+)
+
+print(f"Created {output}")
