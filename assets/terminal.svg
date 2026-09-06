@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#050817"/>
+      <stop offset="55%" stop-color="#0a1028"/>
+      <stop offset="100%" stop-color="#14082b"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#42e8ff"/>
+      <stop offset="100%" stop-color="#7c6cff"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" fill="none" stroke="#26325b" stroke-width="1" opacity=".34"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="560" rx="28" fill="url(#bg)"/>
+  <rect x="1" y="1" width="1198" height="558" rx="28" fill="none" stroke="#27335f" stroke-width="2"/>
+  <rect width="1200" height="560" fill="url(#grid)" opacity=".55"/>
+
+  <circle cx="1030" cy="95" r="100" fill="#4c3cff" opacity=".12" filter="url(#soft)"/>
+  <circle cx="190" cy="475" r="120" fill="#00d9ff" opacity=".08" filter="url(#soft)"/>
+
+  <text x="55" y="58" fill="#6e7da8" font-family="monospace" font-size="18" letter-spacing="4">AASIF // TERMINAL_CORE</text>
+  <circle cx="1110" cy="48" r="7" fill="#43e8ff" filter="url(#glow)"/>
+  <text x="1130" y="55" fill="#7c8bb5" font-family="monospace" font-size="13">ONLINE</text>
+
+  <rect x="48" y="86" width="1104" height="405" rx="20" fill="#070b1c" stroke="#26345f" stroke-width="2"/>
+
+  <text x="76" y="125" fill="#526188" font-family="monospace" font-size="14">SYSTEM / IDENTITY</text>
+  <line x1="76" y1="143" x2="1124" y2="143" stroke="#202c53"/>
+
+  <text x="80" y="187" fill="#45e7ff" font-family="monospace" font-size="23">$ whoami</text>
+  <text x="245" y="187" fill="#dce7ff" font-family="monospace" font-size="23">aasif-b-tech</text>
+
+  <text x="80" y="230" fill="#45e7ff" font-family="monospace" font-size="23">$ role</text>
+  <text x="245" y="230" fill="#dce7ff" font-family="monospace" font-size="23">CSE • UI/UX • WEB • AI • GAME DEV</text>
+
+  <text x="80" y="273" fill="#45e7ff" font-family="monospace" font-size="23">$ status</text>
+  <text x="245" y="273" fill="#8affb7" font-family="monospace" font-size="23">BUILDING...</text>
+  <circle cx="390" cy="266" r="6" fill="#8affb7" filter="url(#glow)"/>
+
+  <text x="80" y="316" fill="#45e7ff" font-family="monospace" font-size="23">$ mission</text>
+  <text x="245" y="316" fill="#dce7ff" font-family="monospace" font-size="23">TURN IDEAS INTO REALITY</text>
+
+  <text x="80" y="359" fill="#45e7ff" font-family="monospace" font-size="23">$ stack</text>
+  <text x="245" y="359" fill="#b8c5e8" font-family="monospace" font-size="21">HTML • CSS • JS • PYTHON • C++</text>
+
+  <text x="80" y="402" fill="#45e7ff" font-family="monospace" font-size="23">$ next</text>
+  <text x="245" y="402" fill="url(#cyan)" font-family="monospace" font-size="28" filter="url(#glow)">∞</text>
+
+  <rect x="80" y="432" width="1040" height="2" fill="url(#cyan)" opacity=".55"/>
+  <text x="80" y="467" fill="#53628e" font-family="monospace" font-size="14">ACCESS GRANTED // KEEP BUILDING // KEEP LEARNING</text>
+  <text x="1090" y="467" fill="#53628e" font-family="monospace" font-size="14">_</text>
+</svg>
