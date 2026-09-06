@@ -1,17 +1,96 @@
-<!-- ========================= HERO ========================= -->
+<!-- ========================= ABOUT ME ========================= -->
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=250&text=AASIF&fontSize=80&fontColor=ffffff&fontAlignY=38&animation=twinkling&color=0:020617,25:0f172a,50:1e3a8a,75:2563eb,100:38bdf8" width="100%"/>
+# 👨‍💻 ABOUT ME
+
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=19&duration=2800&pause=800&color=38BDF8&center=true&vCenter=true&width=700&lines=Developer+%7C+Designer+%7C+Builder;Turning+Ideas+Into+Digital+Experiences;Always+Learning.+Always+Building.+%F0%9F%9A%80" />
 
 <br>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=25&duration=2500&pause=700&color=38BDF8&center=true&vCenter=true&width=850&lines=Computer+Science+Engineering+Student;UI%2FUX+Designer;Web+Developer;AI+Enthusiast;Game+Development+Explorer;Hackathon+Builder;Turning+Ideas+Into+Reality+%F0%9F%9A%80" />
+<img src="https://raw.githubusercontent.com/saadeghi/saadeghi/master/dino.gif" width="500"/>
 
-<br><br>
+</div>
 
-<img src="https://komarev.com/ghpvc/?username=Aasif-b-tech&style=for-the-badge&color=0ea5e9&label=PROFILE+VISITORS"/>
+---
 
+### 👋 Hello, I'm **Aasif**
+
+I'm a **B.Tech Computer Science & Engineering student** passionate about building technology that combines **code, design and creativity**.
+
+I enjoy working on projects where I can take an idea from **concept → design → development → working product**.
+
+### 🔥 My Interests
+
+<table>
+<tr>
+
+<td align="center" width="25%">
+
+### 🌐
+### Web
+
+Frontend &  
+Full-Stack Development
+
+</td>
+
+<td align="center" width="25%">
+
+### 🎨
+### Design
+
+UI/UX &  
+Creative Interfaces
+
+</td>
+
+<td align="center" width="25%">
+
+### 🤖
+### AI
+
+Artificial Intelligence  
+& Intelligent Systems
+
+</td>
+
+<td align="center" width="25%">
+
+### 🎮
+### Games
+
+Game Development  
+& Interactive Worlds
+
+</td>
+
+</tr>
+</table>
+
+<br>
+
+<div align="center">
+
+### ⚙️ HOW I BUILD
+
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=17&duration=1800&pause=500&color=A78BFA&center=true&vCenter=true&width=700&lines=%F0%9F%92%A1+IDEA;%E2%86%93;%F0%9F%8E%A8+UI%2FUX;%E2%86%93;%F0%9F%92%BB+DEVELOPMENT;%E2%86%93;%E2%9A%99%EF%B8%8F+BACKEND;%E2%86%93;%F0%9F%A4%96+AI+%26+LOGIC;%E2%86%93;%F0%9F%9A%80+REAL-WORLD+PRODUCT" />
+
+</div>
+
+<br>
+
+### 🧩 What I'm Currently Exploring
+
+```text
+🌐  Web Development
+🎨  UI/UX Design
+🤖  Artificial Intelligence
+⚙️  Backend Development
+🗄️  Databases
+🎮  Game Development
+🏆  Hackathons
+💡  Creative Technology
 </div>
 
 ---
