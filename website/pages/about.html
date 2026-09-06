@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AASIF // About System</title>
+
+    <meta
+        name="description"
+        content="AASIF // Developer profile — CSE, UI/UX, web development, AI, game development and creative engineering."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        .about-page {
+            min-height: 100vh;
+            padding: 140px 6vw 80px;
+        }
+
+        .about-container {
+            width: min(1200px, 100%);
+            margin: 0 auto;
+        }
+
+        .about-header {
+            margin-bottom: 55px;
+        }
+
+        .about-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 13px;
+            border: 1px solid rgba(0, 229, 255, 0.25);
+            background: rgba(0, 229, 255, 0.06);
+            border-radius: 999px;
+            color: #79f5ff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 0.14em;
+        }
+
+        .about-kicker::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #65f7ff;
+            box-shadow: 0 0 14px #65f7ff;
+        }
+
+        .about-title {
+            max-width: 900px;
+            margin: 22px 0 18px;
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(2.8rem, 7vw, 6.6rem);
+            line-height: 0.95;
+            letter-spacing: -0.06em;
+            text-transform: uppercase;
+        }
+
+        .about-title span {
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #73ecff,
+                #a68cff
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .about-intro {
+            max-width: 780px;
+            color: rgba(255, 255, 255, 0.66);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 22px;
+        }
+
+        .about-card {
+            position: relative;
+            overflow: hidden;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 28px;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 255, 255, 0.075),
+                    rgba(255, 255, 255, 0.018)
+                );
+            backdrop-filter: blur(20px);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.22);
+        }
+
+        .about-card::before {
+            content: "";
+            position: absolute;
+            width: 240px;
+            height: 240px;
+            right: -120px;
+            top: -120px;
+            border-radius: 50%;
+            background: rgba(0, 229, 255, 0.12);
+            filter: blur(55px);
+            pointer-events: none;
+        }
+
+        .profile-card {
+            min-height: 560px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .profile-orb {
+            width: 190px;
+            height: 190px;
+            margin: 10px auto 35px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(115, 236, 255, 0.5);
+            border-radius: 50%;
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(115, 236, 255, 0.16),
+                    rgba(10, 18, 28, 0.7) 60%
+                );
+            box-shadow:
+                0 0 45px rgba(0, 229, 255, 0.16),
+                inset 0 0 35px rgba(0, 229, 255, 0.12);
+            font-family: "Orbitron", sans-serif;
+            color: #a3f7ff;
+            text-align: center;
+            letter-spacing: 0.1em;
+            position: relative;
+        }
+
+        .profile-orb::before,
+        .profile-orb::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(115, 236, 255, 0.2);
+        }
+
+        .profile-orb::before {
+            inset: -18px;
+        }
+
+        .profile-orb::after {
+            inset: -35px;
+            border-style: dashed;
+            animation: orbitSpin 18s linear infinite;
+        }
+
+        @keyframes orbitSpin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .profile-name {
+            margin: 0;
+            font-family: "Orbitron", sans-serif;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .profile-role {
+            margin: 10px 0 0;
+            text-align: center;
+            color: #77edff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+        }
+
+        .profile-status {
+            margin-top: 28px;
+            padding: 15px;
+            border: 1px solid rgba(118, 255, 181, 0.15);
+            border-radius: 14px;
+            background: rgba(118, 255, 181, 0.035);
+            color: #76ffb5;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.62rem;
+            letter-spacing: 0.08em;
+            text-align: center;
+        }
+
+        .section-label {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.4);
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.62rem;
+            letter-spacing: 0.14em;
+        }
+
+        .story {
+            color: rgba(255, 255, 255, 0.68);
+            line-height: 1.85;
+        }
+
+        .story p {
+            margin: 0 0 18px;
+        }
+
+        .story strong {
+            color: #ffffff;
+        }
+
+        .system-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .system-item {
+            padding: 17px;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.025);
+        }
+
+        .system-item small {
+            display: block;
+            margin-bottom: 7px;
+            color: rgba(255, 255, 255, 0.38);
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.53rem;
+            letter-spacing: 0.1em;
+        }
+
+        .system-item span {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        .mission-card {
+            margin-top: 22px;
+        }
+
+        .mission-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .mission {
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.025);
+        }
+
+        .mission-number {
+            color: rgba(115, 236, 255, 0.5);
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.62rem;
+            letter-spacing: 0.14em;
+        }
+
+        .mission h3 {
+            margin: 15px 0 10px;
+            font-family: "Orbitron", sans-serif;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+        }
+
+        .mission p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.58);
+            line-height: 1.7;
+        }
+
+        .about-footer {
+            margin-top: 55px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            color: rgba(255, 255, 255, 0.4);
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.1em;
+        }
+
+        @media (max-width: 850px) {
+            .about-grid,
+            .mission-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-card {
+                min-height: auto;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .about-page {
+                padding: 120px 5vw 55px;
+            }
+
+            .about-card {
+                padding: 22px;
+            }
+
+            .system-list {
+                grid-template-columns: 1fr;
+            }
+
+            .about-footer {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="topbar">
+        <a class="brand" href="../index.html">
+            AASIF<span>//</span>SYS
+        </a>
+
+        <nav class="nav-links">
+            <a href="../index.html">HOME</a>
+            <a class="active" href="about.html">ABOUT</a>
+            <a href="../index.html#skills">SKILLS</a>
+            <a href="projects.html">PROJECTS</a>
+            <a href="../index.html#contact">CONTACT</a>
+        </nav>
+
+        <button class="menu-toggle" aria-label="Open navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+
+    <main class="about-page">
+        <div class="about-container">
+
+            <section class="about-header reveal">
+                <div class="about-kicker">
+                    DEVELOPER PROFILE // ONLINE
+                </div>
+
+                <h1 class="about-title">
+                    MEET<br>
+                    <span>AASIF.</span>
+                </h1>
+
+                <p class="about-intro">
+                    A CSE student and creative builder exploring the space
+                    where technology, design and imagination collide.
+                    I like turning rough ideas into interfaces, prototypes,
+                    systems and experiences people can actually use.
+                </p>
+            </section>
+
+
+            <section class="about-grid">
+
+                <article class="about-card profile-card reveal">
+                    <div>
+                        <div class="profile-orb">
+                            AASIF<br>// CORE
+                        </div>
+
+                        <h2 class="profile-name">
+                            AASIF
+                        </h2>
+
+                        <p class="profile-role">
+                            CSE // UI/UX // WEB // AI // GAME DEV
+                        </p>
+                    </div>
+
+                    <div class="profile-status">
+                        ● STATUS: BUILDING THE NEXT IDEA
+                    </div>
+                </article>
+
+
+                <article class="about-card reveal">
+                    <div class="section-label">
+                        01 // THE STORY
+                    </div>
+
+                    <div class="story">
+                        <p>
+                            I started with curiosity — asking how websites,
+                            applications and games are actually made.
+                            That curiosity gradually turned into a habit of
+                            <strong>building things instead of only imagining them.</strong>
+                        </p>
+
+                        <p>
+                            Today my interests move across
+                            <strong>web development, UI/UX, AI, game development
+                            and creative storytelling.</strong>
+                            Each area gives me a different way to solve problems
+                            and communicate ideas.
+                        </p>
+
+                        <p>
+                            I enjoy hackathons and experimental projects because
+                            they force an idea to become something real,
+                            testable and presentable in a short amount of time.
+                        </p>
+                    </div>
+
+                    <div class="system-list">
+                        <div class="system-item">
+                            <small>PRIMARY MODE</small>
+                            <span>Builder</span>
+                        </div>
+
+                        <div class="system-item">
+                            <small>DESIGN MODE</small>
+                            <span>UI / UX</span>
+                        </div>
+
+                        <div class="system-item">
+                            <small>TECH MODE</small>
+                            <span>Web + AI</span>
+                        </div>
+
+                        <div class="system-item">
+                            <small>CREATIVE MODE</small>
+                            <span>Games + Stories</span>
+                        </div>
+                    </div>
+                </article>
+
+            </section>
+
+
+            <section class="about-card mission-card reveal">
+                <div class="section-label">
+                    02 // OPERATING SYSTEM
+                </div>
+
+                <div class="mission-layout">
+
+                    <article class="mission">
+                        <div class="mission-number">MISSION_01</div>
+
+                        <h3>Learn</h3>
+
+                        <p>
+                            Keep expanding the technical foundation through
+                            practical projects, experimentation and consistent
+                            problem solving.
+                        </p>
+                    </article>
+
+                    <article class="mission">
+                        <div class="mission-number">MISSION_02</div>
+
+                        <h3>Build</h3>
+
+                        <p>
+                            Turn concepts into working prototypes rather than
+                            leaving good ideas trapped inside notebooks.
+                        </p>
+                    </article>
+
+                    <article class="mission">
+                        <div class="mission-number">MISSION_03</div>
+
+                        <h3>Create</h3>
+
+                        <p>
+                            Combine engineering with visual design and storytelling
+                            to make technology feel memorable.
+                        </p>
+                    </article>
+
+                    <article class="mission">
+                        <div class="mission-number">MISSION_04</div>
+
+                        <h3>Impact</h3>
+
+                        <p>
+                            Build useful experiences that solve real problems,
+                            help people and open doors to bigger ideas.
+                        </p>
+                    </article>
+
+                </div>
+            </section>
+
+
+            <section class="about-card mission-card reveal">
+                <div class="section-label">
+                    03 // CURRENT DIRECTION
+                </div>
+
+                <div class="story">
+                    <p>
+                        The current direction is simple:
+                        <strong>become better at building complete products.</strong>
+                        Not just a beautiful frontend, not just a backend,
+                        and not just an idea — but a complete experience from
+                        concept to deployment.
+                    </p>
+
+                    <p>
+                        The long-term goal is to bring together
+                        <strong>software engineering, AI, interactive design,
+                        games and original creative worlds</strong>
+                        into projects that feel both technically strong and
+                        visually distinctive.
+                    </p>
+                </div>
+            </section>
+
+
+            <footer class="about-footer">
+                <span>AASIF // DEVELOPER SYSTEM</span>
+                <span>LEARN → BUILD → CREATE → IMPACT → REPEAT</span>
+            </footer>
+
+        </div>
+    </main>
+
+
+    <script src="../script.js"></script>
+
+</body>
+</html>
