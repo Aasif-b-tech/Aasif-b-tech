@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.55" stop-color="#0b1830"/>
+      <stop offset="1" stop-color="#15102b"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#27e8ff"/>
+      <stop offset="1" stop-color="#7c5cff"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="360" rx="28" fill="url(#bg)"/>
+  <rect x="18" y="18" width="1164" height="324" rx="22" fill="none" stroke="#263b61" stroke-width="2"/>
+
+  <path d="M45 70H310M890 70H1155" stroke="#24456b"/>
+  <circle cx="55" cy="70" r="4" fill="#27e8ff" filter="url(#glow)"/>
+  <text x="75" y="77" fill="#8ba7c9" font-family="monospace" font-size="18" letter-spacing="4">AASIF // CONNECT</text>
+
+  <text x="600" y="128" text-anchor="middle" fill="#eaf8ff" font-family="sans-serif" font-size="38" font-weight="700">LET'S BUILD SOMETHING</text>
+  <text x="600" y="158" text-anchor="middle" fill="#6eeeff" font-family="monospace" font-size="17" letter-spacing="3">IDEAS → CODE → REALITY</text>
+
+  <g font-family="monospace" font-size="17">
+    <rect x="70" y="205" width="235" height="72" rx="14" fill="#0d1c33" stroke="#24517a"/>
+    <circle cx="98" cy="241" r="13" fill="none" stroke="#27e8ff" stroke-width="2"/>
+    <path d="M91 241h14M98 234v14" stroke="#27e8ff"/>
+    <text x="125" y="236" fill="#dffbff">GITHUB</text>
+    <text x="125" y="259" fill="#6f8dab" font-size="13">CODE / PROJECTS</text>
+
+    <rect x="325" y="205" width="235" height="72" rx="14" fill="#0d1c33" stroke="#24517a"/>
+    <circle cx="353" cy="241" r="13" fill="none" stroke="#7c5cff" stroke-width="2"/>
+    <path d="M346 248l14-14M347 236h9v9" stroke="#7c5cff"/>
+    <text x="380" y="236" fill="#dffbff">LINKEDIN</text>
+    <text x="380" y="259" fill="#6f8dab" font-size="13">NETWORK / CAREER</text>
+
+    <rect x="580" y="205" width="235" height="72" rx="14" fill="#0d1c33" stroke="#24517a"/>
+    <circle cx="608" cy="241" r="13" fill="none" stroke="#27e8ff" stroke-width="2"/>
+    <path d="M599 238l9 7 9-7M600 234h16v14h-16z" fill="none" stroke="#27e8ff"/>
+    <text x="635" y="236" fill="#dffbff">EMAIL</text>
+    <text x="635" y="259" fill="#6f8dab" font-size="13">COLLAB / CONTACT</text>
+
+    <rect x="835" y="205" width="295" height="72" rx="14" fill="#0d1c33" stroke="#24517a"/>
+    <circle cx="863" cy="241" r="13" fill="none" stroke="#7c5cff" stroke-width="2"/>
+    <path d="M855 241h16M863 233v16" stroke="#7c5cff"/>
+    <text x="890" y="236" fill="#dffbff">PORTFOLIO</text>
+    <text x="890" y="259" fill="#6f8dab" font-size="13">DESIGN / EXPERIMENTS</text>
+  </g>
+
+  <path d="M70 310H1130" stroke="#1d3558"/>
+  <text x="70" y="326" fill="#587492" font-family="monospace" font-size="12">STATUS: ONLINE</text>
+  <text x="1130" y="326" text-anchor="end" fill="#587492" font-family="monospace" font-size="12">AASIF.DEV // 01</text>
+</svg>
