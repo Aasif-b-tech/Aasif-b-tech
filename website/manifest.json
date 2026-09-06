@@ -1,0 +1,17 @@
+{
+  "name": "AASIF // Developer System",
+  "short_name": "AASIF",
+  "description": "A futuristic developer portfolio for Aasif — CSE, UI/UX, Web, AI and Game Development.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#050812",
+  "theme_color": "#050812",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
