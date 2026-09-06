@@ -36,4 +36,5 @@ I work across:
 🤖 Artificial Intelligence
 🎮 Game Development
 🏆 Hackathons
+💡 Creative Technology🏆 Hackathons
 💡 Creative Technology
