@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#06101d"/><stop offset=".55" stop-color="#0b1830"/><stop offset="1" stop-color="#170d2d"/></linearGradient>
+<linearGradient id="c"><stop stop-color="#19e6ff"/><stop offset="1" stop-color="#73f9ff"/></linearGradient>
+<linearGradient id="p"><stop stop-color="#875cff"/><stop offset="1" stop-color="#d58cff"/></linearGradient>
+<pattern id="g" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#17395b" opacity=".34"/></pattern>
+<filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="520" rx="28" fill="url(#bg)"/><rect x="18" y="18" width="1164" height="484" rx="22" fill="url(#g)" stroke="#1e456b" stroke-width="2"/>
+<text x="70" y="88" fill="#19e6ff" font-family="monospace" font-size="20" letter-spacing="4">AASIF // CREATIVE CORE</text>
+<text x="70" y="128" fill="#fff" font-family="Arial,sans-serif" font-size="34" font-weight="700">INTERESTS &amp; CREATIVE UNIVERSE</text>
+<text x="70" y="158" fill="#8da8c5" font-family="monospace" font-size="15">THE THINGS THAT KEEP THE BRAIN RUNNING</text>
+<g font-family="Arial,sans-serif">
+<rect x="70" y="195" width="250" height="190" rx="18" fill="#091b31" stroke="#245a82"/><text x="195" y="245" text-anchor="middle" fill="#19e6ff" font-size="43" filter="url(#glow)">⌁</text><text x="195" y="286" text-anchor="middle" fill="#fff" font-size="22" font-weight="700">ANIME &amp; STORIES</text><text x="195" y="316" text-anchor="middle" fill="#8da8c5" font-family="monospace" font-size="13">Characters • Worlds</text><text x="195" y="338" text-anchor="middle" fill="#8da8c5" font-family="monospace" font-size="13">Lore • Conflict</text>
+<rect x="350" y="195" width="250" height="190" rx="18" fill="#120e29" stroke="#6545a3"/><text x="475" y="245" text-anchor="middle" fill="#bd8cff" font-size="43" filter="url(#glow)">◇</text><text x="475" y="286" text-anchor="middle" fill="#fff" font-size="22" font-weight="700">GAME DEV</text><text x="475" y="316" text-anchor="middle" fill="#b8a8d4" font-family="monospace" font-size="13">Mechanics • Systems</text><text x="475" y="338" text-anchor="middle" fill="#b8a8d4" font-family="monospace" font-size="13">Worlds • Play</text>
+<rect x="630" y="195" width="250" height="190" rx="18" fill="#091b31" stroke="#245a82"/><text x="755" y="245" text-anchor="middle" fill="#19e6ff" font-size="43" filter="url(#glow)">⌘</text><text x="755" y="286" text-anchor="middle" fill="#fff" font-size="22" font-weight="700">DESIGN</text><text x="755" y="316" text-anchor="middle" fill="#8da8c5" font-family="monospace" font-size="13">UI/UX • Visuals</text><text x="755" y="338" text-anchor="middle" fill="#8da8c5" font-family="monospace" font-size="13">Experiments • Motion</text>
+<rect x="910" y="195" width="220" height="190" rx="18" fill="#120e29" stroke="#6545a3"/><text x="1020" y="245" text-anchor="middle" fill="#bd8cff" font-size="43" filter="url(#glow)">∞</text><text x="1020" y="286" text-anchor="middle" fill="#fff" font-size="22" font-weight="700">BUILDING</text><text x="1020" y="316" text-anchor="middle" fill="#b8a8d4" font-family="monospace" font-size="13">Ideas → Code</text><text x="1020" y="338" text-anchor="middle" fill="#b8a8d4" font-family="monospace" font-size="13">Code → Reality</text>
+</g>
+<line x1="70" y1="425" x2="1130" y2="425" stroke="url(#c)" stroke-width="2"/><text x="70" y="456" fill="#6885a5" font-family="monospace" font-size="12">CREATIVE_ENGINE: ACTIVE</text><text x="1130" y="456" text-anchor="end" fill="#19e6ff" font-family="monospace" font-size="12">IMAGINATION: ONLINE</text>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#06101d"/><stop offset=".55" stop-color="#0b1830"/><stop offset="1" stop-color="#170d2d"/></linearGradient>
+<linearGradient id="c" x1="0" x2="1"><stop stop-color="#19e6ff"/><stop offset="1" stop-color="#73f9ff"/></linearGradient>
+<linearGradient id="p" x1="0" x2="1"><stop stop-color="#875cff"/><stop offset="1" stop-color="#d58cff"/></linearGradient>
+<pattern id="g" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#17395b" opacity=".34"/></pattern>
+<filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="560" rx="28" fill="url(#bg)"/><rect x="18" y="18" width="1164" height="524" rx="22" fill="url(#g)" stroke="#1e456b" stroke-width="2"/>
+<g fill="none" stroke="#19e6ff" stroke-width="3"><path d="M55 105V55H105"/><path d="M1095 55H1145V105"/><path d="M55 455V505H105"/><path d="M1095 505H1145V455"/></g>
+<text x="70" y="88" fill="#19e6ff" font-family="monospace" font-size="20" letter-spacing="4">AASIF // ACHIEVEMENT VAULT</text>
+<text x="70" y="128" fill="#fff" font-family="Arial,sans-serif" font-size="34" font-weight="700">CERTIFICATIONS &amp; ACHIEVEMENTS</text>
+<text x="70" y="158" fill="#8da8c5" font-family="monospace" font-size="15">CREDENTIALS • COMPETITIONS • WORKSHOPS • MILESTONES</text>
+<g>
+<rect x="70" y="195" width="500" height="105" rx="16" fill="#091b31" stroke="#245a82" stroke-width="2"/>
+<circle cx="112" cy="247" r="27" fill="#07111f" stroke="#19e6ff" stroke-width="3" filter="url(#glow)"/><text x="112" y="254" text-anchor="middle" fill="#19e6ff" font-size="23" font-family="monospace">01</text>
+<text x="155" y="232" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="700">CERTIFICATIONS</text><text x="155" y="259" fill="#8da8c5" font-family="monospace" font-size="13">Courses • Technical credentials</text><text x="155" y="280" fill="#19e6ff" font-family="monospace" font-size="12">STATUS: EXPANDING</text>
+<rect x="630" y="195" width="500" height="105" rx="16" fill="#120e29" stroke="#6545a3" stroke-width="2"/>
+<circle cx="672" cy="247" r="27" fill="#160d2d" stroke="#bd8cff" stroke-width="3" filter="url(#glow)"/><text x="672" y="254" text-anchor="middle" fill="#bd8cff" font-size="23" font-family="monospace">02</text>
+<text x="715" y="232" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="700">HACKATHON WINS</text><text x="715" y="259" fill="#b8a8d4" font-family="monospace" font-size="13">Problem solving • Team builds</text><text x="715" y="280" fill="#bd8cff" font-family="monospace" font-size="12">STATUS: IN PROGRESS</text>
+<rect x="70" y="325" width="500" height="105" rx="16" fill="#120e29" stroke="#6545a3" stroke-width="2"/>
+<circle cx="112" cy="377" r="27" fill="#160d2d" stroke="#bd8cff" stroke-width="3" filter="url(#glow)"/><text x="112" y="384" text-anchor="middle" fill="#bd8cff" font-size="23" font-family="monospace">03</text>
+<text x="155" y="362" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="700">WORKSHOPS</text><text x="155" y="389" fill="#b8a8d4" font-family="monospace" font-size="13">New tools • New perspectives</text><text x="155" y="410" fill="#bd8cff" font-family="monospace" font-size="12">STATUS: LEARNING</text>
+<rect x="630" y="325" width="500" height="105" rx="16" fill="#091b31" stroke="#245a82" stroke-width="2"/>
+<circle cx="672" cy="377" r="27" fill="#07111f" stroke="#19e6ff" stroke-width="3" filter="url(#glow)"/><text x="672" y="384" text-anchor="middle" fill="#19e6ff" font-size="23" font-family="monospace">04</text>
+<text x="715" y="362" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="700">NEXT MILESTONE</text><text x="715" y="389" fill="#8da8c5" font-family="monospace" font-size="13">Build • Ship • Improve • Repeat</text><text x="715" y="410" fill="#19e6ff" font-family="monospace" font-size="12">TARGET: ∞</text>
+</g>
+<line x1="70" y1="472" x2="1130" y2="472" stroke="url(#c)" stroke-width="2"/><text x="70" y="502" fill="#6885a5" font-family="monospace" font-size="12">ACHIEVEMENT_LOG: OPEN</text><text x="1130" y="502" text-anchor="end" fill="#19e6ff" font-family="monospace" font-size="12">SYNC: ONLINE</text>
+</svg>

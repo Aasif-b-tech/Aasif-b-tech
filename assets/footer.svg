@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#06101d"/><stop offset=".55" stop-color="#0b1830"/><stop offset="1" stop-color="#170d2d"/></linearGradient>
+<linearGradient id="line"><stop stop-color="#19e6ff"/><stop offset=".5" stop-color="#875cff"/><stop offset="1" stop-color="#19e6ff"/></linearGradient>
+<pattern id="g" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#17395b" opacity=".34"/></pattern>
+</defs>
+<rect width="1200" height="260" rx="28" fill="url(#bg)"/><rect x="18" y="18" width="1164" height="224" rx="22" fill="url(#g)" stroke="#1e456b" stroke-width="2"/>
+<line x1="70" y1="80" x2="1130" y2="80" stroke="url(#line)" stroke-width="2"/>
+<text x="600" y="130" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="30" font-weight="700">THANKS FOR VISITING THE SYSTEM.</text>
+<text x="600" y="164" text-anchor="middle" fill="#19e6ff" font-family="monospace" font-size="15" letter-spacing="3">IDEAS → CODE → DESIGN → REALITY</text>
+<text x="600" y="198" text-anchor="middle" fill="#8da8c5" font-family="monospace" font-size="13">AASIF // KEEP BUILDING • KEEP LEARNING • KEEP CREATING</text>
+<line x1="70" y1="220" x2="1130" y2="220" stroke="url(#line)" stroke-width="2"/>
+</svg>
