@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.55" stop-color="#0a1830"/>
+      <stop offset="1" stop-color="#130d2c"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" x2="1">
+      <stop offset="0" stop-color="#19e6ff"/>
+      <stop offset="1" stop-color="#6ff7ff"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" x2="1">
+      <stop offset="0" stop-color="#8b5cff"/>
+      <stop offset="1" stop-color="#d08cff"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" x2="1">
+      <stop offset="0" stop-color="#19e6ff"/>
+      <stop offset="0.5" stop-color="#8b5cff"/>
+      <stop offset="1" stop-color="#19e6ff"/>
+    </linearGradient>
+    <filter id="glowC">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowP">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" fill="none" stroke="#163456" stroke-width="1" opacity=".35"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="620" rx="28" fill="url(#bg)"/>
+  <rect x="18" y="18" width="1164" height="584" rx="22" fill="url(#grid)" stroke="#1d4368" stroke-width="2"/>
+
+  <!-- HUD corners -->
+  <g fill="none" stroke="#19e6ff" stroke-width="3" opacity=".9">
+    <path d="M55 105V55H105"/>
+    <path d="M1095 55H1145V105"/>
+    <path d="M55 515V565H105"/>
+    <path d="M1095 565H1145V515"/>
+  </g>
+
+  <text x="70" y="92" fill="#19e6ff" font-family="monospace" font-size="20" letter-spacing="4">AASIF // EDUCATION CORE</text>
+  <text x="70" y="132" fill="#eef8ff" font-family="Arial, sans-serif" font-size="34" font-weight="700">ACADEMIC JOURNEY</text>
+  <text x="70" y="163" fill="#8da8c5" font-family="monospace" font-size="16">LEARN • BUILD • EXPERIMENT • EVOLVE</text>
+
+  <!-- central vertical line -->
+  <line x1="600" y1="205" x2="600" y2="535" stroke="url(#line)" stroke-width="4" filter="url(#glowC)"/>
+
+  <!-- 2024 -->
+  <g>
+    <circle cx="600" cy="235" r="12" fill="#07111f" stroke="#19e6ff" stroke-width="4" filter="url(#glowC)"/>
+    <rect x="75" y="195" width="470" height="95" rx="15" fill="#0b1b31" fill-opacity=".9" stroke="#235b83" stroke-width="2"/>
+    <text x="100" y="228" fill="#19e6ff" font-family="monospace" font-size="15" letter-spacing="3">01 // FOUNDATION</text>
+    <text x="100" y="258" fill="#ffffff" font-family="Arial, sans-serif" font-size="25" font-weight="700">CSE • START</text>
+    <text x="100" y="280" fill="#8da8c5" font-family="monospace" font-size="14">Programming • Logic • Exploration</text>
+    <text x="625" y="242" fill="#19e6ff" font-family="monospace" font-size="18">2024</text>
+  </g>
+
+  <!-- 2025 -->
+  <g>
+    <circle cx="600" cy="330" r="12" fill="#130d2c" stroke="#a877ff" stroke-width="4" filter="url(#glowP)"/>
+    <rect x="655" y="290" width="470" height="95" rx="15" fill="#130f2b" fill-opacity=".9" stroke="#6844a8" stroke-width="2"/>
+    <text x="680" y="323" fill="#b88aff" font-family="monospace" font-size="15" letter-spacing="3">02 // BUILD MODE</text>
+    <text x="680" y="353" fill="#ffffff" font-family="Arial, sans-serif" font-size="25" font-weight="700">WEB • UI/UX • PROJECTS</text>
+    <text x="680" y="375" fill="#b7a8d5" font-family="monospace" font-size="14">Design • Frontend • Real-world builds</text>
+    <text x="520" y="337" text-anchor="end" fill="#b88aff" font-family="monospace" font-size="18">2025</text>
+  </g>
+
+  <!-- 2026 -->
+  <g>
+    <circle cx="600" cy="425" r="12" fill="#07111f" stroke="#19e6ff" stroke-width="4" filter="url(#glowC)"/>
+    <rect x="75" y="385" width="470" height="95" rx="15" fill="#0b1b31" fill-opacity=".9" stroke="#235b83" stroke-width="2"/>
+    <text x="100" y="418" fill="#19e6ff" font-family="monospace" font-size="15" letter-spacing="3">03 // EXPANSION</text>
+    <text x="100" y="448" fill="#ffffff" font-family="Arial, sans-serif" font-size="25" font-weight="700">AI • GAMES • HACKATHONS</text>
+    <text x="100" y="470" fill="#8da8c5" font-family="monospace" font-size="14">Prototype • Collaborate • Compete</text>
+    <text x="625" y="432" fill="#19e6ff" font-family="monospace" font-size="18">2026</text>
+  </g>
+
+  <!-- Future -->
+  <g>
+    <circle cx="600" cy="520" r="14" fill="#130d2c" stroke="#d08cff" stroke-width="4" filter="url(#glowP)"/>
+    <rect x="655" y="480" width="470" height="95" rx="15" fill="#130f2b" fill-opacity=".9" stroke="#6844a8" stroke-width="2"/>
+    <text x="680" y="513" fill="#d08cff" font-family="monospace" font-size="15" letter-spacing="3">04 // NEXT LEVEL</text>
+    <text x="680" y="543" fill="#ffffff" font-family="Arial, sans-serif" font-size="25" font-weight="700">INNOVATE • SHIP • IMPACT</text>
+    <text x="680" y="565" fill="#b7a8d5" font-family="monospace" font-size="14">∞ Growth • Bigger systems • Bigger ideas</text>
+    <text x="520" y="527" text-anchor="end" fill="#d08cff" font-family="monospace" font-size="22">∞</text>
+  </g>
+
+  <!-- bottom status -->
+  <rect x="70" y="585" width="1060" height="2" fill="url(#line)" opacity=".8"/>
+</svg>
