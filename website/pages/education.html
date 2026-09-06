@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AASIF // Education and learning journey">
+    <title>AASIF // Education Core</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js" defer></script>
+
+    <style>
+        .education-page {
+            padding-top: 8rem;
+        }
+
+        .education-hero {
+            min-height: 58vh;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .education-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 1.2rem;
+            padding: 0.5rem 0.8rem;
+            border: 1px solid rgba(96, 214, 255, 0.24);
+            background: rgba(9, 19, 38, 0.48);
+            color: #8ee8ff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .education-kicker::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #6ee7ff;
+            box-shadow: 0 0 16px #6ee7ff;
+        }
+
+        .education-hero h1 {
+            max-width: 850px;
+            margin: 0 0 1.2rem;
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(2.5rem, 6vw, 6rem);
+            line-height: 0.98;
+            letter-spacing: -0.05em;
+        }
+
+        .education-hero h1 span {
+            color: #75ddff;
+            text-shadow: 0 0 30px rgba(70, 210, 255, 0.25);
+        }
+
+        .education-hero p {
+            max-width: 700px;
+            color: #a9b8d1;
+            font-size: 1.05rem;
+            line-height: 1.85;
+        }
+
+        .education-core {
+            position: relative;
+            min-height: 390px;
+            display: grid;
+            place-items: center;
+        }
+
+        .core-orbit {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 1px solid rgba(100, 220, 255, 0.22);
+            border-radius: 50%;
+            animation: orbitSpin 18s linear infinite;
+        }
+
+        .core-orbit::before,
+        .core-orbit::after {
+            content: "";
+            position: absolute;
+            inset: 35px;
+            border: 1px solid rgba(147, 114, 255, 0.28);
+            border-radius: 50%;
+        }
+
+        .core-orbit::after {
+            inset: 78px;
+            border-color: rgba(89, 226, 255, 0.35);
+        }
+
+        .core-center {
+            position: relative;
+            z-index: 2;
+            width: 155px;
+            height: 155px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            border: 1px solid rgba(120, 228, 255, 0.5);
+            background:
+                radial-gradient(circle, rgba(74, 215, 255, 0.2), rgba(17, 29, 58, 0.82) 62%);
+            box-shadow:
+                0 0 35px rgba(64, 210, 255, 0.24),
+                inset 0 0 35px rgba(74, 215, 255, 0.08);
+            font-family: "Orbitron", sans-serif;
+            text-align: center;
+        }
+
+        .core-center strong {
+            display: block;
+            color: #e9fbff;
+            font-size: 1.4rem;
+            letter-spacing: 0.08em;
+        }
+
+        .core-center small {
+            color: #72dcff;
+            font-size: 0.58rem;
+            letter-spacing: 0.2em;
+        }
+
+        .orbit-label {
+            position: absolute;
+            z-index: 3;
+            padding: 0.55rem 0.7rem;
+            border: 1px solid rgba(119, 221, 255, 0.18);
+            background: rgba(5, 13, 29, 0.76);
+            color: #91a9c8;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.58rem;
+            letter-spacing: 0.12em;
+        }
+
+        .orbit-label.one { top: 10%; right: 4%; }
+        .orbit-label.two { bottom: 8%; left: 0; }
+        .orbit-label.three { top: 35%; left: -3%; }
+
+        .section-heading {
+            margin-bottom: 2rem;
+        }
+
+        .section-heading .eyebrow {
+            color: #65dcff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            margin: 0.55rem 0 0;
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(1.7rem, 4vw, 3rem);
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
+        }
+
+        .education-card {
+            position: relative;
+            overflow: hidden;
+            padding: 1.6rem;
+            min-height: 220px;
+            border: 1px solid rgba(111, 207, 255, 0.16);
+            background: linear-gradient(145deg, rgba(18, 31, 58, 0.78), rgba(8, 15, 31, 0.72));
+            backdrop-filter: blur(14px);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .education-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(100, 222, 255, 0.42);
+        }
+
+        .education-card::after {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            right: -70px;
+            bottom: -80px;
+            border-radius: 50%;
+            background: rgba(78, 209, 255, 0.08);
+            filter: blur(18px);
+        }
+
+        .education-card .year {
+            color: #6edfff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+        }
+
+        .education-card h3 {
+            margin: 0.8rem 0 0.7rem;
+            font-family: "Orbitron", sans-serif;
+            font-size: 1.15rem;
+        }
+
+        .education-card p {
+            margin: 0;
+            color: #9eacc4;
+            line-height: 1.7;
+        }
+
+        .education-card .status {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.38rem 0.6rem;
+            border: 1px solid rgba(113, 222, 255, 0.16);
+            color: #c3d5eb;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.12em;
+        }
+
+        .learning-stack {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 1.2rem;
+            margin-top: 1.2rem;
+        }
+
+        .learning-panel {
+            padding: 1.7rem;
+            border: 1px solid rgba(111, 207, 255, 0.16);
+            background: rgba(9, 18, 36, 0.72);
+        }
+
+        .learning-panel h3 {
+            margin-top: 0;
+            font-family: "Orbitron", sans-serif;
+        }
+
+        .learning-list {
+            display: grid;
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .learning-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.9rem 1rem;
+            border-left: 2px solid rgba(98, 219, 255, 0.5);
+            background: rgba(255, 255, 255, 0.025);
+        }
+
+        .learning-item span:first-child {
+            color: #d9e6f7;
+            font-weight: 600;
+        }
+
+        .learning-item span:last-child {
+            color: #72dfff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.1em;
+        }
+
+        .protocol {
+            display: grid;
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .protocol-step {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            color: #b3c2d9;
+        }
+
+        .protocol-step b {
+            width: 32px;
+            height: 32px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(104, 220, 255, 0.3);
+            color: #72dcff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.62rem;
+        }
+
+        .education-next {
+            margin-top: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1.5rem;
+            border: 1px solid rgba(126, 111, 255, 0.2);
+            background: linear-gradient(90deg, rgba(61, 70, 140, 0.16), rgba(12, 22, 42, 0.65));
+        }
+
+        .education-next h3 {
+            margin: 0 0 0.35rem;
+            font-family: "Orbitron", sans-serif;
+        }
+
+        .education-next p {
+            margin: 0;
+            color: #99a9c0;
+        }
+
+        @keyframes orbitSpin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 900px) {
+            .education-hero,
+            .learning-stack {
+                grid-template-columns: 1fr;
+            }
+
+            .education-core {
+                min-height: 330px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .education-page {
+                padding-top: 6.5rem;
+            }
+
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .education-core {
+                min-height: 280px;
+                transform: scale(0.85);
+            }
+
+            .education-next {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .core-orbit {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-noise"></div>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <header class="topbar">
+        <a class="brand" href="../index.html">
+            <span class="brand-mark">A</span>
+            <span>AASIF<span class="brand-slash"> //</span></span>
+        </a>
+
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav-links">
+            <a href="../index.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a href="skills.html">SKILLS</a>
+            <a href="projects.html">PROJECTS</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+    </header>
+
+    <main class="container education-page">
+        <section class="education-hero reveal">
+            <div>
+                <div class="education-kicker">EDUCATION CORE // ACTIVE</div>
+                <h1>LEARN.<br><span>BUILD.</span><br>EVOLVE.</h1>
+                <p>
+                    Education is not just a timeline here. It is the engine behind every
+                    project, experiment, hackathon, interface, and strange idea that gets
+                    turned into something real.
+                </p>
+            </div>
+
+            <div class="education-core" aria-label="Education core visualization">
+                <div class="core-orbit"></div>
+                <div class="orbit-label one">KNOWLEDGE +++</div>
+                <div class="orbit-label two">SKILLS // LOADED</div>
+                <div class="orbit-label three">CURIOSITY // ON</div>
+
+                <div class="core-center">
+                    <div>
+                        <strong>EDU</strong>
+                        <small>CORE ONLINE</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block reveal">
+            <div class="section-heading">
+                <div class="eyebrow">01 // ACADEMIC TIMELINE</div>
+                <h2>The Learning Journey</h2>
+            </div>
+
+            <div class="education-grid">
+                <article class="education-card">
+                    <div class="year">2024 // FOUNDATION</div>
+                    <h3>Computer Science Begins</h3>
+                    <p>
+                        Entered the CSE journey and started building the fundamentals:
+                        programming, problem solving, web technologies, and the mindset
+                        needed to create systems instead of only studying them.
+                    </p>
+                    <span class="status">FOUNDATION LOADED</span>
+                </article>
+
+                <article class="education-card">
+                    <div class="year">2025 // BUILD MODE</div>
+                    <h3>From Concepts to Projects</h3>
+                    <p>
+                        Expanded into frontend development, UI/UX, GitHub workflows,
+                        creative coding, and practical project building while turning
+                        classroom concepts into working prototypes.
+                    </p>
+                    <span class="status">BUILD MODE ACTIVE</span>
+                </article>
+
+                <article class="education-card">
+                    <div class="year">2026 // EXPANSION</div>
+                    <h3>CSE + Creative Engineering</h3>
+                    <p>
+                        Exploring AI, automation, game development, visual design,
+                        hackathons, and larger systems where technology and creativity
+                        meet.
+                    </p>
+                    <span class="status">EXPANSION IN PROGRESS</span>
+                </article>
+
+                <article class="education-card">
+                    <div class="year">NEXT // LEVEL UP</div>
+                    <h3>Build Bigger. Learn Deeper.</h3>
+                    <p>
+                        The next phase is about stronger engineering foundations,
+                        better products, deeper technical knowledge, and projects
+                        capable of making a real-world impact.
+                    </p>
+                    <span class="status">TARGET: IMPACT</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-block reveal">
+            <div class="section-heading">
+                <div class="eyebrow">02 // KNOWLEDGE STACK</div>
+                <h2>What Is Being Built</h2>
+            </div>
+
+            <div class="learning-stack">
+                <div class="learning-panel">
+                    <h3>Learning Modules</h3>
+
+                    <div class="learning-list">
+                        <div class="learning-item">
+                            <span>Computer Science Fundamentals</span>
+                            <span>CORE</span>
+                        </div>
+                        <div class="learning-item">
+                            <span>Web Development</span>
+                            <span>BUILD</span>
+                        </div>
+                        <div class="learning-item">
+                            <span>Python + C++</span>
+                            <span>CODE</span>
+                        </div>
+                        <div class="learning-item">
+                            <span>UI/UX + Visual Design</span>
+                            <span>DESIGN</span>
+                        </div>
+                        <div class="learning-item">
+                            <span>AI + Automation</span>
+                            <span>EXPLORE</span>
+                        </div>
+                        <div class="learning-item">
+                            <span>Game Development + Creative Worlds</span>
+                            <span>CREATE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-panel">
+                    <h3>Study Protocol</h3>
+                    <p>
+                        The goal is simple: learn something, use it, break it,
+                        understand why it broke, then build it better.
+                    </p>
+
+                    <div class="protocol">
+                        <div class="protocol-step">
+                            <b>01</b>
+                            <span>LEARN</span>
+                        </div>
+                        <div class="protocol-step">
+                            <b>02</b>
+                            <span>APPLY</span>
+                        </div>
+                        <div class="protocol-step">
+                            <b>03</b>
+                            <span>EXPERIMENT</span>
+                        </div>
+                        <div class="protocol-step">
+                            <b>04</b>
+                            <span>REFINE</span>
+                        </div>
+                        <div class="protocol-step">
+                            <b>05</b>
+                            <span>BUILD AGAIN</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="education-next reveal">
+            <div>
+                <h3>THE NEXT MODULE // INTERESTS</h3>
+                <p>Explore the creative systems, stories, games, anime worlds, and ideas that power the build mode.</p>
+            </div>
+            <a class="btn btn-primary" href="interests.html">OPEN INTERESTS →</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>AASIF //</strong>
+            <span>EDUCATION CORE</span>
+        </div>
+        <p>LEARN → BUILD → CREATE → IMPACT → REPEAT</p>
+        <small>© <span data-year></span> AASIF. ALL SYSTEMS ONLINE.</small>
+    </footer>
+</body>
+</html>
