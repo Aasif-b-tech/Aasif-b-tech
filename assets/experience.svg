@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#06101d"/><stop offset=".58" stop-color="#0b1830"/><stop offset="1" stop-color="#170d2d"/>
+  </linearGradient>
+  <linearGradient id="cyan" x1="0" x2="1"><stop stop-color="#19e6ff"/><stop offset="1" stop-color="#73f9ff"/></linearGradient>
+  <linearGradient id="purple" x1="0" x2="1"><stop stop-color="#875cff"/><stop offset="1" stop-color="#d58cff"/></linearGradient>
+  <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#17395b" opacity=".34"/></pattern>
+  <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+
+<rect width="1200" height="650" rx="28" fill="url(#bg)"/>
+<rect x="18" y="18" width="1164" height="614" rx="22" fill="url(#grid)" stroke="#1e456b" stroke-width="2"/>
+
+<g fill="none" stroke="#19e6ff" stroke-width="3">
+ <path d="M55 105V55H105"/><path d="M1095 55H1145V105"/>
+ <path d="M55 545V595H105"/><path d="M1095 595H1145V545"/>
+</g>
+
+<text x="70" y="88" fill="#19e6ff" font-family="monospace" font-size="20" letter-spacing="4">AASIF // EXPERIENCE LOG</text>
+<text x="70" y="128" fill="#fff" font-family="Arial,sans-serif" font-size="34" font-weight="700">BUILDING IN PUBLIC</text>
+<text x="70" y="158" fill="#8da8c5" font-family="monospace" font-size="15">PROJECTS • HACKATHONS • COLLABORATION • SHIP</text>
+
+<!-- timeline rail -->
+<line x1="130" y1="205" x2="130" y2="520" stroke="url(#cyan)" stroke-width="4" filter="url(#glow)"/>
+
+<!-- event 1 -->
+<circle cx="130" cy="225" r="11" fill="#07111f" stroke="#19e6ff" stroke-width="4" filter="url(#glow)"/>
+<rect x="175" y="185" width="945" height="82" rx="16" fill="#091b31" stroke="#245a82" stroke-width="2"/>
+<text x="202" y="216" fill="#19e6ff" font-family="monospace" font-size="13" letter-spacing="3">01 // WEB DEVELOPMENT</text>
+<text x="202" y="245" fill="#fff" font-family="Arial,sans-serif" font-size="23" font-weight="700">FROM INTERFACES TO REAL PRODUCTS</text>
+<text x="1085" y="216" text-anchor="end" fill="#19e6ff" font-family="monospace" font-size="14">BUILD</text>
+<text x="1085" y="245" text-anchor="end" fill="#7593b1" font-family="monospace" font-size="12">UI • FRONTEND • DEPLOYMENT</text>
+
+<!-- event 2 -->
+<circle cx="130" cy="315" r="11" fill="#160d2d" stroke="#a979ff" stroke-width="4" filter="url(#glow)"/>
+<rect x="175" y="275" width="945" height="82" rx="16" fill="#120e29" stroke="#6545a3" stroke-width="2"/>
+<text x="202" y="306" fill="#bd8cff" font-family="monospace" font-size="13" letter-spacing="3">02 // HACKATHON MODE</text>
+<text x="202" y="335" fill="#fff" font-family="Arial,sans-serif" font-size="23" font-weight="700">TEAMWORK • RAPID PROTOTYPING • PROBLEM SOLVING</text>
+<text x="1085" y="306" text-anchor="end" fill="#bd8cff" font-family="monospace" font-size="14">SHIP</text>
+<text x="1085" y="335" text-anchor="end" fill="#a895c5" font-family="monospace" font-size="12">IDEA → PROTOTYPE → DEMO</text>
+
+<!-- event 3 -->
+<circle cx="130" cy="405" r="11" fill="#07111f" stroke="#19e6ff" stroke-width="4" filter="url(#glow)"/>
+<rect x="175" y="365" width="945" height="82" rx="16" fill="#091b31" stroke="#245a82" stroke-width="2"/>
+<text x="202" y="396" fill="#19e6ff" font-family="monospace" font-size="13" letter-spacing="3">03 // CREATIVE ENGINEERING</text>
+<text x="202" y="425" fill="#fff" font-family="Arial,sans-serif" font-size="23" font-weight="700">AI • GAME DEV • ANIME WORLDS</text>
+<text x="1085" y="396" text-anchor="end" fill="#19e6ff" font-family="monospace" font-size="14">CREATE</text>
+<text x="1085" y="425" text-anchor="end" fill="#7593b1" font-family="monospace" font-size="12">EXPERIMENT • DESIGN • BUILD</text>
+
+<!-- event 4 -->
+<circle cx="130" cy="495" r="13" fill="#160d2d" stroke="#d58cff" stroke-width="4" filter="url(#glow)"/>
+<rect x="175" y="455" width="945" height="82" rx="16" fill="#120e29" stroke="#6545a3" stroke-width="2"/>
+<text x="202" y="486" fill="#d58cff" font-family="monospace" font-size="13" letter-spacing="3">04 // NEXT MISSION</text>
+<text x="202" y="515" fill="#fff" font-family="Arial,sans-serif" font-size="23" font-weight="700">TURN BIGGER IDEAS INTO BIGGER SYSTEMS</text>
+<text x="1085" y="486" text-anchor="end" fill="#d58cff" font-family="monospace" font-size="14">NEXT ∞</text>
+<text x="1085" y="515" text-anchor="end" fill="#a895c5" font-family="monospace" font-size="12">LEARN • LEAD • IMPACT</text>
+
+<!-- status bar -->
+<rect x="70" y="560" width="1060" height="42" rx="12" fill="#071321" stroke="#1e456b"/>
+<circle cx="94" cy="581" r="6" fill="#19e6ff" filter="url(#glow)"/>
+<text x="112" y="586" fill="#9dc4df" font-family="monospace" font-size="13">DEVELOPER STATUS: ONLINE</text>
+<text x="1110" y="586" text-anchor="end" fill="#19e6ff" font-family="monospace" font-size="13">MODE: BUILDING</text>
+</svg>
