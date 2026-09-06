@@ -1,119 +1,42 @@
-<!-- ========================= ABOUT ME ========================= -->
-
 <div align="center">
 
-# 👨‍💻 ABOUT ME
-
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=19&duration=2800&pause=800&color=38BDF8&center=true&vCenter=true&width=700&lines=Developer+%7C+Designer+%7C+Builder;Turning+Ideas+Into+Digital+Experiences;Always+Learning.+Always+Building.+%F0%9F%9A%80" />
+<img src="./assets/banner.gif" width="100%" alt="Aasif Animated Developer Banner"/>
 
 <br>
 
-<img src="https://raw.githubusercontent.com/saadeghi/saadeghi/master/dino.gif" width="500"/>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=23&duration=2500&pause=700&color=38BDF8&center=true&vCenter=true&width=800&lines=Computer+Science+Engineering+Student;UI%2FUX+Designer+%7C+Developer;Web+%7C+AI+%7C+Game+Development;Hackathon+Builder;Turning+Ideas+Into+Reality+%F0%9F%9A%80" />
+
+<br><br>
+
+<img src="https://komarev.com/ghpvc/?username=Aasif-b-tech&style=for-the-badge&color=0ea5e9&label=PROFILE+VISITORS"/>
 
 </div>
 
 ---
 
-### 👋 Hello, I'm **Aasif**
-
-I'm a **B.Tech Computer Science & Engineering student** passionate about building technology that combines **code, design and creativity**.
-
-I enjoy working on projects where I can take an idea from **concept → design → development → working product**.
-
-### 🔥 My Interests
-
-<table>
-<tr>
-
-<td align="center" width="25%">
-
-### 🌐
-### Web
-
-Frontend &  
-Full-Stack Development
-
-</td>
-
-<td align="center" width="25%">
-
-### 🎨
-### Design
-
-UI/UX &  
-Creative Interfaces
-
-</td>
-
-<td align="center" width="25%">
-
-### 🤖
-### AI
-
-Artificial Intelligence  
-& Intelligent Systems
-
-</td>
-
-<td align="center" width="25%">
-
-### 🎮
-### Games
-
-Game Development  
-& Interactive Worlds
-
-</td>
-
-</tr>
-</table>
-
-<br>
+# 👨‍💻 About Me
 
 <div align="center">
 
-### ⚙️ HOW I BUILD
-
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=17&duration=1800&pause=500&color=A78BFA&center=true&vCenter=true&width=700&lines=%F0%9F%92%A1+IDEA;%E2%86%93;%F0%9F%8E%A8+UI%2FUX;%E2%86%93;%F0%9F%92%BB+DEVELOPMENT;%E2%86%93;%E2%9A%99%EF%B8%8F+BACKEND;%E2%86%93;%F0%9F%A4%96+AI+%26+LOGIC;%E2%86%93;%F0%9F%9A%80+REAL-WORLD+PRODUCT" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=18&duration=2500&pause=700&color=A78BFA&center=true&vCenter=true&width=700&lines=Developer+%7C+Designer+%7C+Builder;Turning+Ideas+Into+Digital+Experiences;Always+Learning.+Always+Building.+%F0%9F%9A%80" />
 
 </div>
 
-<br>
+Hi, I'm **Aasif**, a **B.Tech Computer Science & Engineering student** who enjoys turning ideas into real digital experiences.
 
-### 🧩 What I'm Currently Exploring
+I like working across the complete journey of a project:
 
 ```text
-🌐  Web Development
-🎨  UI/UX Design
-🤖  Artificial Intelligence
-⚙️  Backend Development
-🗄️  Databases
-🎮  Game Development
-🏆  Hackathons
-💡  Creative Technology
-</div>
-
----
-
-<!-- ========================= ABOUT ========================= -->
-
-<div align="center">
-
-# 👨‍💻 ABOUT ME
-
-</div>
-
-<img align="right" width="280" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif">
-
-I'm **Aasif**, a **B.Tech Computer Science & Engineering student** who enjoys turning ideas into real digital experiences.
-
-I work across:
-
-```text
-🌐 Web Development
-🎨 UI/UX Design
-🤖 Artificial Intelligence
-🎮 Game Development
-🏆 Hackathons
-💡 Creative Technology🏆 Hackathons
-💡 Creative Technology
+💡 IDEA
+   ↓
+🎨 UI / UX
+   ↓
+💻 DEVELOPMENT
+   ↓
+⚙️ BACKEND
+   ↓
+🗄️ DATABASE
+   ↓
+🤖 AI / INTELLIGENCE
+   ↓
+🚀 REAL-WORLD PRODUCT
