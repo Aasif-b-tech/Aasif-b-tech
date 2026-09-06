@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AASIF // Projects</title>
+
+    <meta
+        name="description"
+        content="AASIF // Project Archive — development, AI, UI/UX, game development and creative experiments."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        /* ==========================================
+           PROJECT ARCHIVE
+           ========================================== */
+
+        .projects-page {
+            min-height: 100vh;
+            padding: 140px 6vw 80px;
+        }
+
+        .projects-container {
+            width: min(1250px, 100%);
+            margin: 0 auto;
+        }
+
+        .projects-header {
+            margin-bottom: 60px;
+        }
+
+        .projects-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 13px;
+            border: 1px solid rgba(0, 229, 255, 0.25);
+            background: rgba(0, 229, 255, 0.06);
+            border-radius: 999px;
+            color: #79f5ff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 0.14em;
+        }
+
+        .projects-kicker::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #65f7ff;
+            box-shadow: 0 0 14px #65f7ff;
+        }
+
+        .projects-title {
+            max-width: 900px;
+            margin: 22px 0 18px;
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(2.8rem, 7vw, 6.8rem);
+            line-height: 0.95;
+            letter-spacing: -0.06em;
+            text-transform: uppercase;
+        }
+
+        .projects-title span {
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #73ecff,
+                #a68cff
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .projects-description {
+            max-width: 760px;
+            color: rgba(255, 255, 255, 0.66);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .project-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .filter-button {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.035);
+            color: rgba(255, 255, 255, 0.65);
+            padding: 10px 15px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.08em;
+            transition: 0.25s ease;
+        }
+
+        .filter-button:hover,
+        .filter-button.active {
+            color: #061016;
+            background: #74efff;
+            border-color: #74efff;
+            box-shadow: 0 0 25px rgba(116, 239, 255, 0.25);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .project-entry {
+            position: relative;
+            min-height: 430px;
+            overflow: hidden;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 28px;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 255, 255, 0.075),
+                    rgba(255, 255, 255, 0.018)
+                );
+            backdrop-filter: blur(20px);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.22);
+            transition: transform 0.35s ease, border-color 0.35s ease;
+        }
+
+        .project-entry::before {
+            content: "";
+            position: absolute;
+            width: 240px;
+            height: 240px;
+            right: -90px;
+            top: -90px;
+            border-radius: 50%;
+            background: rgba(0, 229, 255, 0.12);
+            filter: blur(50px);
+            pointer-events: none;
+        }
+
+        .project-entry:hover {
+            transform: translateY(-8px);
+            border-color: rgba(115, 236, 255, 0.35);
+        }
+
+        .project-entry.featured {
+            grid-column: span 2;
+            min-height: 500px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .project-number {
+            color: rgba(115, 236, 255, 0.5);
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 0.15em;
+        }
+
+        .project-status {
+            display: inline-block;
+            margin-left: 12px;
+            color: #76ffb5;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.12em;
+        }
+
+        .project-name {
+            margin: 18px 0 14px;
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(1.45rem, 3vw, 2.6rem);
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        .project-description {
+            max-width: 650px;
+            color: rgba(255, 255, 255, 0.62);
+            line-height: 1.75;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 22px 0;
+        }
+
+        .project-tag {
+            padding: 7px 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            background: rgba(255, 255, 255, 0.035);
+            color: rgba(255, 255, 255, 0.7);
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.58rem;
+            letter-spacing: 0.06em;
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 42px;
+            padding: 0 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(115, 236, 255, 0.22);
+            color: #86f3ff;
+            text-decoration: none;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.62rem;
+            letter-spacing: 0.08em;
+            transition: 0.25s ease;
+        }
+
+        .project-link:hover {
+            background: rgba(115, 236, 255, 0.1);
+            border-color: rgba(115, 236, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .project-visual {
+            position: relative;
+            min-height: 320px;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+            border-radius: 22px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background:
+                radial-gradient(
+                    circle at 50% 45%,
+                    rgba(0, 229, 255, 0.2),
+                    transparent 32%
+                ),
+                linear-gradient(
+                    145deg,
+                    rgba(0, 229, 255, 0.07),
+                    rgba(116, 77, 255, 0.08)
+                );
+        }
+
+        .project-visual::before,
+        .project-visual::after {
+            content: "";
+            position: absolute;
+            border: 1px solid rgba(115, 236, 255, 0.2);
+            border-radius: 50%;
+        }
+
+        .project-visual::before {
+            width: 190px;
+            height: 190px;
+        }
+
+        .project-visual::after {
+            width: 260px;
+            height: 260px;
+            border-style: dashed;
+            animation: spinProject 18s linear infinite;
+        }
+
+        @keyframes spinProject {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .visual-core {
+            position: relative;
+            z-index: 2;
+            width: 105px;
+            height: 105px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(124, 244, 255, 0.7);
+            border-radius: 50%;
+            background: rgba(5, 18, 28, 0.75);
+            box-shadow:
+                0 0 35px rgba(0, 229, 255, 0.2),
+                inset 0 0 25px rgba(0, 229, 255, 0.12);
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.7rem;
+            color: #9df7ff;
+            letter-spacing: 0.08em;
+            text-align: center;
+        }
+
+        .mini-data {
+            position: absolute;
+            z-index: 3;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.52rem;
+            letter-spacing: 0.08em;
+            color: rgba(255, 255, 255, 0.48);
+        }
+
+        .mini-data.top {
+            top: 20px;
+            left: 20px;
+        }
+
+        .mini-data.bottom {
+            right: 20px;
+            bottom: 20px;
+        }
+
+        .archive-footer {
+            margin-top: 60px;
+            padding-top: 28px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            color: rgba(255, 255, 255, 0.4);
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.62rem;
+            letter-spacing: 0.1em;
+        }
+
+        .hidden-project {
+            display: none !important;
+        }
+
+        @media (max-width: 850px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-entry.featured {
+                grid-column: span 1;
+                grid-template-columns: 1fr;
+            }
+
+            .project-visual {
+                min-height: 260px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .projects-page {
+                padding: 120px 5vw 55px;
+            }
+
+            .project-entry {
+                padding: 22px;
+                min-height: auto;
+            }
+
+            .projects-title {
+                font-size: clamp(2.5rem, 13vw, 4rem);
+            }
+
+            .archive-footer {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==========================================
+         NAVIGATION
+         ========================================== -->
+
+    <header class="topbar">
+        <a class="brand" href="../index.html">
+            AASIF<span>//</span>SYS
+        </a>
+
+        <nav class="nav-links">
+            <a href="../index.html">HOME</a>
+            <a href="../index.html#about">ABOUT</a>
+            <a href="../index.html#skills">SKILLS</a>
+            <a class="active" href="projects.html">PROJECTS</a>
+            <a href="../index.html#contact">CONTACT</a>
+        </nav>
+
+        <button class="menu-toggle" aria-label="Open navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+
+    <!-- ==========================================
+         PROJECT ARCHIVE
+         ========================================== -->
+
+    <main class="projects-page">
+        <div class="projects-container">
+
+            <section class="projects-header reveal">
+                <div class="projects-kicker">
+                    PROJECT ARCHIVE // ONLINE
+                </div>
+
+                <h1 class="projects-title">
+                    BUILD.<br>
+                    <span>CREATE.</span><br>
+                    IMPACT.
+                </h1>
+
+                <p class="projects-description">
+                    A cinematic archive of experiments, prototypes and systems
+                    built across web development, AI, UI/UX, game development
+                    and creative world-building.
+                </p>
+
+                <div class="project-filter">
+                    <button class="filter-button active" data-filter="all">
+                        ALL
+                    </button>
+
+                    <button class="filter-button" data-filter="web">
+                        WEB
+                    </button>
+
+                    <button class="filter-button" data-filter="ai">
+                        AI
+                    </button>
+
+                    <button class="filter-button" data-filter="design">
+                        UI / UX
+                    </button>
+
+                    <button class="filter-button" data-filter="game">
+                        GAME DEV
+                    </button>
+
+                    <button class="filter-button" data-filter="creative">
+                        CREATIVE
+                    </button>
+                </div>
+            </section>
+
+
+            <!-- ==========================================
+                 PROJECTS
+                 ========================================== -->
+
+            <section class="project-grid">
+
+                <!-- FEATURED -->
+                <article
+                    class="project-entry featured reveal"
+                    data-category="web ai"
+                >
+                    <div>
+                        <div class="project-number">
+                            PROJECT_001
+                            <span class="project-status">
+                                ● ACTIVE
+                            </span>
+                        </div>
+
+                        <h2 class="project-name">
+                            Smart Waste Management
+                        </h2>
+
+                        <p class="project-description">
+                            A smart-city concept designed to improve municipal
+                            waste collection through intelligent bin monitoring,
+                            optimized routes, segregation assistance, citizen
+                            complaints, rewards and real-time analytics.
+                        </p>
+
+                        <div class="project-tags">
+                            <span class="project-tag">WEB</span>
+                            <span class="project-tag">AI</span>
+                            <span class="project-tag">DASHBOARD</span>
+                            <span class="project-tag">IOT READY</span>
+                            <span class="project-tag">HACKATHON</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a class="project-link" href="../index.html#contact">
+                                VIEW SYSTEM
+                            </a>
+
+                            <a class="project-link" href="https://github.com/Aasif-b-tech" target="_blank">
+                                GITHUB ↗
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-visual">
+                        <span class="mini-data top">
+                            CITY_GRID // 01
+                        </span>
+
+                        <div class="visual-core">
+                            WASTE<br>
+                            CORE
+                        </div>
+
+                        <span class="mini-data bottom">
+                            STATUS: BUILDING...
+                        </span>
+                    </div>
+                </article>
+
+
+                <!-- GAME DEVELOPMENT -->
+                <article
+                    class="project-entry reveal"
+                    data-category="game"
+                >
+                    <div class="project-number">
+                        PROJECT_002
+                        <span class="project-status">
+                            ● EXPERIMENTAL
+                        </span>
+                    </div>
+
+                    <h2 class="project-name">
+                        Game Development
+                    </h2>
+
+                    <p class="project-description">
+                        Interactive game concepts combining gameplay,
+                        visual design, progression systems and story-driven
+                        worlds.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="project-tag">UNITY</span>
+                        <span class="project-tag">C#</span>
+                        <span class="project-tag">GAME DESIGN</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a class="project-link" href="../index.html#contact">
+                            EXPLORE
+                        </a>
+                    </div>
+
+                    <div class="project-visual">
+                        <span class="mini-data top">
+                            GAME_ENGINE // ONLINE
+                        </span>
+
+                        <div class="visual-core">
+                            GAME<br>
+                            CORE
+                        </div>
+
+                        <span class="mini-data bottom">
+                            WORLD: LOADING
+                        </span>
+                    </div>
+                </article>
+
+
+                <!-- UI/UX -->
+                <article
+                    class="project-entry reveal"
+                    data-category="design web"
+                >
+                    <div class="project-number">
+                        PROJECT_003
+                        <span class="project-status">
+                            ● DESIGNING
+                        </span>
+                    </div>
+
+                    <h2 class="project-name">
+                        UI / UX Experiments
+                    </h2>
+
+                    <p class="project-description">
+                        Futuristic interfaces, dashboards, landing pages and
+                        interactive visual systems focused on usability,
+                        hierarchy and cinematic presentation.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="project-tag">FIGMA</span>
+                        <span class="project-tag">UI / UX</span>
+                        <span class="project-tag">WEB</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a class="project-link" href="../index.html#contact">
+                            VIEW DESIGN
+                        </a>
+                    </div>
+
+                    <div class="project-visual">
+                        <span class="mini-data top">
+                            UI_LAYER // 03
+                        </span>
+
+                        <div class="visual-core">
+                            DESIGN<br>
+                            CORE
+                        </div>
+
+                        <span class="mini-data bottom">
+                            UX: OPTIMIZED
+                        </span>
+                    </div>
+                </article>
+
+
+                <!-- AI -->
+                <article
+                    class="project-entry reveal"
+                    data-category="ai"
+                >
+                    <div class="project-number">
+                        PROJECT_004
+                        <span class="project-status">
+                            ● RESEARCH
+                        </span>
+                    </div>
+
+                    <h2 class="project-name">
+                        AI / Automation
+                    </h2>
+
+                    <p class="project-description">
+                        AI-powered concepts and automation experiments designed
+                        to turn repetitive workflows and raw information into
+                        useful systems.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="project-tag">PYTHON</span>
+                        <span class="project-tag">AI</span>
+                        <span class="project-tag">AUTOMATION</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a class="project-link" href="../index.html#contact">
+                            EXPLORE
+                        </a>
+                    </div>
+
+                    <div class="project-visual">
+                        <span class="mini-data top">
+                            NEURAL_LAYER // 04
+                        </span>
+
+                        <div class="visual-core">
+                            AI<br>
+                            CORE
+                        </div>
+
+                        <span class="mini-data bottom">
+                            MODEL: LEARNING
+                        </span>
+                    </div>
+                </article>
+
+
+                <!-- CREATIVE -->
+                <article
+                    class="project-entry reveal"
+                    data-category="creative"
+                >
+                    <div class="project-number">
+                        PROJECT_005
+                        <span class="project-status">
+                            ● IMAGINATION
+                        </span>
+                    </div>
+
+                    <h2 class="project-name">
+                        Creative Universe
+                    </h2>
+
+                    <p class="project-description">
+                        Anime-inspired worlds, original characters, clans,
+                        powers, conflicts and lore developed as foundations
+                        for future games and animation.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="project-tag">STORY</span>
+                        <span class="project-tag">ANIME</span>
+                        <span class="project-tag">WORLD BUILDING</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a class="project-link" href="../index.html#universe">
+                            ENTER UNIVERSE
+                        </a>
+                    </div>
+
+                    <div class="project-visual">
+                        <span class="mini-data top">
+                            LORE_SYSTEM // 05
+                        </span>
+
+                        <div class="visual-core">
+                            WORLD<br>
+                            CORE
+                        </div>
+
+                        <span class="mini-data bottom">
+                            STATUS: IMAGINATION ONLINE
+                        </span>
+                    </div>
+                </article>
+
+            </section>
+
+
+            <!-- ==========================================
+                 FOOTER SIGNAL
+                 ========================================== -->
+
+            <footer class="archive-footer">
+                <span>
+                    AASIF // PROJECT ARCHIVE
+                </span>
+
+                <span>
+                    IDEAS → PROTOTYPES → SYSTEMS → REALITY
+                </span>
+            </footer>
+
+        </div>
+    </main>
+
+
+    <script src="../script.js"></script>
+
+    <script>
+        // Project category filtering
+        document.addEventListener("DOMContentLoaded", () => {
+            const buttons = document.querySelectorAll(".filter-button");
+            const projects = document.querySelectorAll(".project-entry");
+
+            buttons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    const filter = button.dataset.filter;
+
+                    buttons.forEach((item) => {
+                        item.classList.remove("active");
+                    });
+
+                    button.classList.add("active");
+
+                    projects.forEach((project) => {
+                        const categories = project.dataset.category || "";
+
+                        if (
+                            filter === "all" ||
+                            categories.includes(filter)
+                        ) {
+                            project.classList.remove("hidden-project");
+                        } else {
+                            project.classList.add("hidden-project");
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
