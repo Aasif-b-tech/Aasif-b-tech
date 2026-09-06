@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AASIF // Developer System — futuristic developer portfolio.">
+    <meta name="theme-color" content="#050812">
+    <title>404 // SYSTEM NOT FOUND</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 32px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .error-page::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(rgba(82, 207, 255, 0.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(82, 207, 255, 0.045) 1px, transparent 1px);
+            background-size: 42px 42px;
+            mask-image: radial-gradient(circle at center, black 0%, transparent 75%);
+            pointer-events: none;
+        }
+
+        .error-orb {
+            position: absolute;
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            border: 1px solid rgba(82, 207, 255, 0.25);
+            box-shadow:
+                0 0 80px rgba(82, 207, 255, 0.12),
+                inset 0 0 70px rgba(135, 90, 255, 0.08);
+            animation: errorPulse 4s ease-in-out infinite;
+        }
+
+        .error-orb::before,
+        .error-orb::after {
+            content: "";
+            position: absolute;
+            inset: 32px;
+            border: 1px dashed rgba(135, 90, 255, 0.28);
+            border-radius: 50%;
+        }
+
+        .error-orb::after {
+            inset: 86px;
+            border-style: solid;
+            border-color: rgba(82, 207, 255, 0.24);
+        }
+
+        .error-card {
+            width: min(760px, 100%);
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: clamp(32px, 7vw, 72px);
+            border: 1px solid rgba(120, 210, 255, 0.18);
+            background: rgba(7, 12, 25, 0.78);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-radius: 28px;
+            box-shadow: 0 30px 100px rgba(0, 0, 0, 0.45);
+        }
+
+        .error-code {
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(5rem, 18vw, 10rem);
+            line-height: .85;
+            letter-spacing: .06em;
+            margin: 0;
+            background: linear-gradient(135deg, #fff, #70d9ff 45%, #9b7cff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 45px rgba(82, 207, 255, .14);
+        }
+
+        .error-label {
+            margin: 24px 0 10px;
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(1.15rem, 3vw, 1.8rem);
+            letter-spacing: .12em;
+        }
+
+        .error-copy {
+            max-width: 560px;
+            margin: 0 auto 28px;
+            color: rgba(230, 240, 255, .68);
+            line-height: 1.8;
+        }
+
+        .error-terminal {
+            margin: 26px auto 30px;
+            max-width: 560px;
+            padding: 18px 20px;
+            text-align: left;
+            border-radius: 16px;
+            border: 1px solid rgba(82, 207, 255, .14);
+            background: rgba(0, 0, 0, .24);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            font-size: .86rem;
+            color: rgba(220, 240, 255, .8);
+        }
+
+        .error-terminal span {
+            color: #6fe1ff;
+        }
+
+        .error-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .error-actions a {
+            text-decoration: none;
+        }
+
+        .system-back {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(82, 207, 255, .25);
+            background: rgba(82, 207, 255, .08);
+            color: #dff8ff;
+            font-family: "Orbitron", sans-serif;
+            font-size: .76rem;
+            letter-spacing: .08em;
+            transition: .25s ease;
+        }
+
+        .system-back:hover {
+            transform: translateY(-2px);
+            border-color: rgba(82, 207, 255, .55);
+            background: rgba(82, 207, 255, .14);
+        }
+
+        .system-back.secondary {
+            border-color: rgba(155, 124, 255, .24);
+            background: rgba(155, 124, 255, .07);
+        }
+
+        .error-status {
+            margin-top: 24px;
+            font-family: "Orbitron", sans-serif;
+            font-size: .67rem;
+            letter-spacing: .16em;
+            color: rgba(120, 210, 255, .55);
+        }
+
+        @keyframes errorPulse {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: .7; }
+            50% { transform: scale(1.05) rotate(8deg); opacity: 1; }
+        }
+
+        @media (max-width: 650px) {
+            .error-orb {
+                width: 270px;
+                height: 270px;
+            }
+
+            .error-card {
+                border-radius: 22px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .error-orb {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="error-page">
+        <div class="error-orb" aria-hidden="true"></div>
+
+        <section class="error-card reveal visible">
+            <p class="eyebrow">AASIF // SYSTEM ERROR</p>
+
+            <h1 class="error-code">404</h1>
+
+            <h2 class="error-label">SYSTEM NOT FOUND.</h2>
+
+            <p class="error-copy">
+                This route drifted outside the current build. The page may have moved,
+                been renamed, or simply decided to enter the void. Happens to the best systems. ⚡
+            </p>
+
+            <div class="error-terminal">
+                <div><span>$ route.scan</span></div>
+                <div>&gt; target: current-page</div>
+                <div>&gt; status: NOT_FOUND</div>
+                <div>&gt; recovery: RETURN_TO_CORE</div>
+            </div>
+
+            <div class="error-actions">
+                <a class="system-back" href="index.html">← RETURN TO CORE</a>
+                <a class="system-back secondary" href="pages/projects.html">OPEN PROJECT ARCHIVE</a>
+            </div>
+
+            <div class="error-status">SYSTEM ONLINE // RECOVERY READY</div>
+        </section>
+    </main>
+</body>
+</html>
