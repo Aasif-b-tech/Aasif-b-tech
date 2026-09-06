@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AASIF // Current signal and build mode">
+    <title>AASIF // Now Playing</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js" defer></script>
+
+    <style>
+        .now-page {
+            padding-top: 8rem;
+        }
+
+        .signal-hero {
+            min-height: 65vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .signal-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 1.2rem;
+            padding: 0.5rem 0.8rem;
+            border: 1px solid rgba(101, 220, 255, 0.22);
+            background: rgba(8, 18, 35, 0.55);
+            color: #8de7ff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.67rem;
+            letter-spacing: 0.16em;
+        }
+
+        .signal-kicker::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #6fe1ff;
+            box-shadow: 0 0 16px #6fe1ff;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .signal-hero h1 {
+            margin: 0 0 1.2rem;
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(2.7rem, 6vw, 6rem);
+            line-height: 0.98;
+            letter-spacing: -0.05em;
+        }
+
+        .signal-hero h1 span {
+            color: #70ddff;
+            text-shadow: 0 0 30px rgba(70, 215, 255, 0.25);
+        }
+
+        .signal-hero p {
+            max-width: 670px;
+            color: #a7b8d0;
+            font-size: 1.04rem;
+            line-height: 1.85;
+        }
+
+        .signal-display {
+            position: relative;
+            min-height: 430px;
+            display: grid;
+            place-items: center;
+        }
+
+        .signal-circle {
+            position: absolute;
+            width: 315px;
+            height: 315px;
+            border-radius: 50%;
+            border: 1px solid rgba(105, 221, 255, 0.2);
+            animation: signalSpin 18s linear infinite;
+        }
+
+        .signal-circle::before,
+        .signal-circle::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(125, 110, 255, 0.28);
+        }
+
+        .signal-circle::before {
+            inset: 36px;
+        }
+
+        .signal-circle::after {
+            inset: 78px;
+            border-color: rgba(96, 223, 255, 0.34);
+        }
+
+        .signal-core {
+            position: relative;
+            z-index: 3;
+            width: 170px;
+            height: 170px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            border: 1px solid rgba(116, 228, 255, 0.5);
+            background: radial-gradient(circle, rgba(76, 216, 255, 0.2), rgba(11, 24, 49, 0.9) 66%);
+            box-shadow:
+                0 0 48px rgba(66, 213, 255, 0.24),
+                inset 0 0 38px rgba(89, 219, 255, 0.09);
+            text-align: center;
+            font-family: "Orbitron", sans-serif;
+        }
+
+        .signal-core strong {
+            display: block;
+            color: #effcff;
+            font-size: 1.35rem;
+            letter-spacing: 0.08em;
+        }
+
+        .signal-core small {
+            color: #71ddff;
+            font-size: 0.56rem;
+            letter-spacing: 0.16em;
+        }
+
+        .signal-label {
+            position: absolute;
+            z-index: 4;
+            padding: 0.55rem 0.7rem;
+            border: 1px solid rgba(110, 220, 255, 0.18);
+            background: rgba(4, 12, 27, 0.8);
+            color: #a0b1ca;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.56rem;
+            letter-spacing: 0.1em;
+        }
+
+        .signal-label.a { top: 7%; right: 3%; }
+        .signal-label.b { top: 42%; left: 0; }
+        .signal-label.c { bottom: 8%; right: 5%; }
+
+        .now-card {
+            padding: 2rem;
+            border: 1px solid rgba(104, 220, 255, 0.18);
+            background:
+                linear-gradient(145deg, rgba(17, 31, 58, 0.82), rgba(7, 15, 31, 0.75));
+            backdrop-filter: blur(15px);
+        }
+
+        .now-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .now-card-header .eyebrow {
+            color: #6fddff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.16em;
+        }
+
+        .live-badge {
+            padding: 0.4rem 0.6rem;
+            border: 1px solid rgba(105, 221, 255, 0.22);
+            color: #72dfff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.53rem;
+            letter-spacing: 0.12em;
+        }
+
+        .track-layout {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .album-art {
+            position: relative;
+            width: 150px;
+            aspect-ratio: 1;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(113, 223, 255, 0.28);
+            background:
+                radial-gradient(circle at center, rgba(88, 216, 255, 0.25), transparent 38%),
+                linear-gradient(145deg, rgba(76, 84, 164, 0.26), rgba(7, 15, 31, 0.9));
+            overflow: hidden;
+        }
+
+        .album-art::before,
+        .album-art::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(102, 221, 255, 0.3);
+        }
+
+        .album-art::before {
+            width: 90px;
+            height: 90px;
+            animation: signalSpin 9s linear infinite reverse;
+        }
+
+        .album-art::after {
+            width: 50px;
+            height: 50px;
+            border-color: rgba(148, 116, 255, 0.35);
+        }
+
+        .album-core {
+            position: relative;
+            z-index: 2;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #75e1ff;
+            box-shadow: 0 0 25px rgba(105, 223, 255, 0.8);
+        }
+
+        .track-info h2 {
+            margin: 0;
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(1.4rem, 3vw, 2.3rem);
+        }
+
+        .track-info .artist {
+            margin: 0.45rem 0 1rem;
+            color: #72ddff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 0.13em;
+        }
+
+        .track-info p {
+            margin: 0;
+            color: #9caec7;
+            line-height: 1.7;
+        }
+
+        .equalizer {
+            display: flex;
+            align-items: end;
+            gap: 4px;
+            height: 42px;
+            margin-top: 1.3rem;
+        }
+
+        .bar {
+            width: 5px;
+            height: 20%;
+            border-radius: 3px;
+            background: #71ddff;
+            box-shadow: 0 0 10px rgba(95, 220, 255, 0.4);
+            animation: equalize 0.9s ease-in-out infinite alternate;
+        }
+
+        .bar:nth-child(2) { animation-delay: -0.2s; }
+        .bar:nth-child(3) { animation-delay: -0.45s; }
+        .bar:nth-child(4) { animation-delay: -0.1s; }
+        .bar:nth-child(5) { animation-delay: -0.6s; }
+        .bar:nth-child(6) { animation-delay: -0.3s; }
+        .bar:nth-child(7) { animation-delay: -0.5s; }
+        .bar:nth-child(8) { animation-delay: -0.15s; }
+
+        .signal-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+            margin-top: 1.2rem;
+        }
+
+        .signal-card {
+            padding: 1.5rem;
+            border: 1px solid rgba(106, 210, 255, 0.15);
+            background: rgba(8, 17, 34, 0.7);
+        }
+
+        .signal-card .label {
+            color: #6cddff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.58rem;
+            letter-spacing: 0.13em;
+        }
+
+        .signal-card h3 {
+            margin: 0.65rem 0;
+            font-family: "Orbitron", sans-serif;
+            font-size: 1rem;
+        }
+
+        .signal-card p {
+            margin: 0;
+            color: #98aac3;
+            line-height: 1.65;
+            font-size: 0.92rem;
+        }
+
+        .focus-panel {
+            margin-top: 1.2rem;
+            padding: 1.8rem;
+            border: 1px solid rgba(119, 108, 255, 0.2);
+            background: linear-gradient(100deg, rgba(61, 69, 145, 0.16), rgba(8, 17, 34, 0.75));
+        }
+
+        .focus-panel h3 {
+            margin-top: 0;
+            font-family: "Orbitron", sans-serif;
+        }
+
+        .focus-flow {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .focus-step {
+            padding: 1rem;
+            border-left: 2px solid rgba(107, 221, 255, 0.48);
+            background: rgba(255, 255, 255, 0.025);
+        }
+
+        .focus-step strong {
+            display: block;
+            color: #dceeff;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+        }
+
+        .focus-step span {
+            display: block;
+            margin-top: 0.4rem;
+            color: #8296b3;
+            font-size: 0.82rem;
+        }
+
+        @keyframes signalSpin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            50% { opacity: 0.35; transform: scale(0.75); }
+        }
+
+        @keyframes equalize {
+            from { height: 18%; }
+            to { height: 100%; }
+        }
+
+        @media (max-width: 900px) {
+            .signal-hero {
+                grid-template-columns: 1fr;
+            }
+
+            .signal-display {
+                min-height: 340px;
+            }
+
+            .signal-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .now-page {
+                padding-top: 6.5rem;
+            }
+
+            .signal-display {
+                min-height: 290px;
+                transform: scale(0.84);
+            }
+
+            .track-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .album-art {
+                width: 130px;
+            }
+
+            .focus-flow {
+                grid-template-columns: 1fr;
+            }
+
+            .now-card {
+                padding: 1.3rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .signal-circle,
+            .album-art::before,
+            .bar,
+            .signal-kicker::before {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-noise"></div>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <header class="topbar">
+        <a class="brand" href="../index.html">
+            <span class="brand-mark">A</span>
+            <span>AASIF<span class="brand-slash"> //</span></span>
+        </a>
+
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav-links">
+            <a href="../index.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a href="skills.html">SKILLS</a>
+            <a href="projects.html">PROJECTS</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+    </header>
+
+    <main class="container now-page">
+        <section class="signal-hero reveal">
+            <div>
+                <div class="signal-kicker">CURRENT SIGNAL // ACTIVE</div>
+                <h1>NOW<br><span>PLAYING:</span><br>BUILD MODE.</h1>
+                <p>
+                    The current state is simple: code, design, experiment, repeat.
+                    This page is the live-feeling dashboard for whatever is keeping
+                    the creative engine moving forward.
+                </p>
+            </div>
+
+            <div class="signal-display" aria-label="Current signal visualization">
+                <div class="signal-circle"></div>
+                <div class="signal-label a">FOCUS // 100%</div>
+                <div class="signal-label b">CREATIVE CORE</div>
+                <div class="signal-label c">STATUS // BUILDING</div>
+
+                <div class="signal-core">
+                    <div>
+                        <strong>LIVE</strong>
+                        <small>SIGNAL ONLINE</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block reveal">
+            <div class="now-card">
+                <div class="now-card-header">
+                    <div class="eyebrow">AASIF // CURRENT SIGNAL</div>
+                    <div class="live-badge">● BUILD MODE</div>
+                </div>
+
+                <div class="track-layout">
+                    <div class="album-art" aria-hidden="true">
+                        <div class="album-core"></div>
+                    </div>
+
+                    <div class="track-info">
+                        <h2>Build Mode</h2>
+                        <div class="artist">CODE • DESIGN • CREATE</div>
+                        <p>
+                            No specific song is required for the system to run.
+                            The soundtrack is whatever gets the next idea moving.
+                        </p>
+
+                        <div class="equalizer" aria-label="Animated activity signal">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block reveal">
+            <div class="signal-grid">
+                <article class="signal-card">
+                    <div class="label">FOCUS 01</div>
+                    <h3>WEB SYSTEMS</h3>
+                    <p>Building polished interfaces, interactive experiences, and useful web projects.</p>
+                </article>
+
+                <article class="signal-card">
+                    <div class="label">FOCUS 02</div>
+                    <h3>CREATIVE TECH</h3>
+                    <p>Exploring AI, automation, game development, and experiments that connect different ideas.</p>
+                </article>
+
+                <article class="signal-card">
+                    <div class="label">FOCUS 03</div>
+                    <h3>UI / UX</h3>
+                    <p>Making complex systems feel simple, visual, intuitive, and genuinely enjoyable to use.</p>
+                </article>
+            </div>
+
+            <div class="focus-panel">
+                <h3>THE CURRENT LOOP</h3>
+                <p>
+                    The objective is not to chase every technology at once.
+                    It is to keep improving the ability to turn an idea into a working system.
+                </p>
+
+                <div class="focus-flow">
+                    <div class="focus-step">
+                        <strong>01 // THINK</strong>
+                        <span>Find the problem or idea.</span>
+                    </div>
+                    <div class="focus-step">
+                        <strong>02 // BUILD</strong>
+                        <span>Turn it into something tangible.</span>
+                    </div>
+                    <div class="focus-step">
+                        <strong>03 // IMPROVE</strong>
+                        <span>Refine until it actually feels right.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>AASIF //</strong>
+            <span>CURRENT SIGNAL</span>
+        </div>
+        <p>CODE → DESIGN → CREATE → REPEAT</p>
+        <small>© <span data-year></span> AASIF. ALL SYSTEMS ONLINE.</small>
+    </footer>
+</body>
+</html>
